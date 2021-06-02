@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio aula 25</title>
+</head>
+<body>
+
+    <!--     Faça um programa em HTML/JS para ajudar o Pedro Patinhas a controlar o dinheiro do seu cofrinho
+
+a)  Emita o título na página “QUEM GUARDA TEM!!!”
+
+b)   Tenha um campo para a entrada de um valor
+
+c)  Tenha um botão “retirar do cofrinho”
+
+d)  Tenha um botão “depositar no cofrinho”
+
+e) Abaixo dos botões tenha a mensagem “O valor que está guardado no seu cofrinho é de R$ xxx,xx” - assim que a página for carregada esse valor dever ser R$ 0,00
+
+f)  Quando o botão retirar do cofrinho for clicado o valor digitado em b) deve ser subtraído do valor contido na mensagem do item e)
+
+g)  Quando o botão depositar no cofrinho for clicado o valor digitado em b) deve ser somado ao valor contido na mensagem do item e)
+
+ -->
+
+ <h2> Quem guarda tem!</h2>
+
+ <label for="cofrinho">Digite o valor</label>
+ <input type="number" id="cofrinho"> 
+   
+ 
+ <button onclick="depositar()">Depositar no cofrinho</button>
+ <button onclick="retirar()">Retirar do cofrinho</button>
+
+ 
+ <br> <br>
+
+ <div id="msg"> O valor que esta no seu cofrinho é de <b id="muda"></b> </div>
+
+
+</body>
+</html>
+
+<script>
+
+    // uma variavel global fica fora da função.
+    // a variavel global é criada quando recarrega a pagina, mas o valor
+    // é compartilhado com todas as demais funçoes
+    
+    var cofre = 0;
+    
+    
+    function depositar() {
+        cofre += Number(cofrinho.value);
+        muda.innerHTML = cofre.toFixed(2);
+        
+    }
+
+    function retirar() {
+        cofre -= Number(cofrinho.value);
+        muda.innerHTML = cofre.toFixed(2);
+        
+    }
+
+    
+    </script>

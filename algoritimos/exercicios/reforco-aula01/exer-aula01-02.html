@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div_sp" style="display: inline;">
+    <img style="height: 200px; width: 200px; margin: 0;"
+     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1027px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png"
+    onclick="saopaulo()">
+    </div>
+
+    <div id="div_timao" style="display: inline;"> 
+    <img style="height: 200px; width: 300px; margin: 0;" src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2016/09/8.jpg" 
+    alt="" onclick="corinthias()">
+</div>
+
+   <div id="div_santos" style="display: inline;"> 
+    <img style="height: 200px; width: 300px; margin: 0;" src="https://sportbuzz.uol.com.br/media/uploads/santosescudi.jpg"
+     alt="" onclick="santos()">
+    </div>
+
+       <div id="div_pal" style="display: inline;"> 
+    <img style="height: 200px; width: 200px; margin: 0;" src="https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2020/06/22121713/escudo-palmeiras-atual.png"
+     alt="" onclick="palmeiras()">
+</div>
+
+      <div id="div_reset" style="float: right;">
+     <button onclick="resetar()">Resetar programa</button>
+    </div>
+
+    <div id="div_esconder" style="float: right; display: block;">
+        <button onclick="esconder()">Esconder escudos</button>
+       </div>
+
+       <div id="div_mostrar" style="float: right;">
+        <button onclick="reiniciar()">Mostrar escudos</button>
+       </div>
+    
+</body>
+</html>
+
+<script>
+
+function saopaulo() {
+
+    div_sp.innerHTML = '';
+
+    div_sp.innerHTML = `<img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt=""> <img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt=""> <img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt="">`;
+
+}
+
+function corinthias() {
+
+    div_timao.innerHTML = ''
+    div_timao.innerHTML = '<img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt=""> <img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt="">'
+
+    
+}
+
+function santos() {
+
+ div_santos.innerHTML = ''
+ div_santos.innerHTML = '<img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt=""> <img style="height: 100px; width: 100px; margin: 0;" src="https://conteudo.imguol.com.br/c/parceiros/ec/2020/11/17/data-marcada-mundial-de-clubes-de-2020-acontecera-em-fevereiro-de-2021-no-catar-1605642240098_v2_450x450.jpg" alt="">'
+
+
+}
+
+function palmeiras() {
+
+ div_pal.innerHTML = ''
+ div_pal.innerHTML = '<img style="height: 200px; width: 300px; margin: 0;" src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2019/04/palmeiras-mundial.jpg"> '
+
+
+}
+
+
+
+//botoes
+
+function resetar() {
+
+    div_sp.innerHTML = '<img style="height: 200px; width: 200px; margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1027px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" onclick="saopaulo()">'
+    
+    div_timao.innerHTML = '<img style="height: 200px; width: 300px; margin: 0;" src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2016/09/8.jpg" alt="" onclick="corinthias()">'
+
+    div_santos.innerHTML = '<img style="height: 200px; width: 300px; margin: 0;" src="https://sportbuzz.uol.com.br/media/uploads/santosescudi.jpg" alt="" onclick="santos()">'
+ 
+    div_pal.innerHTML = '<img style="height: 200px; width: 200px; margin: 0;" src="https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2020/06/22121713/escudo-palmeiras-atual.png" alt="" onclick="palmeiras()">'
+
+}
+
+
+function esconder() {
+
+div_sp.innerHTML = ''
+
+div_timao.innerHTML = ''
+
+div_santos.innerHTML = ''
+
+div_pal.innerHTML = ''
+
+div_esconder.style = 'none'
+
+div_mostrar.style.display = "block"
+
+}
+
+
+function reiniciar() {
+    div_sp.innerHTML = '<img style="height: 200px; width: 200px; margin: 0;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1027px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" onclick="saopaulo()">'
+    
+    div_timao.innerHTML = '<img style="height: 200px; width: 300px; margin: 0;" src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2016/09/8.jpg" alt="" onclick="corinthias()">'
+
+    div_santos.innerHTML = '<img style="height: 200px; width: 300px; margin: 0;" src="https://sportbuzz.uol.com.br/media/uploads/santosescudi.jpg" alt="" onclick="santos()">'
+ 
+    div_pal.innerHTML = '<img style="height: 200px; width: 200px; margin: 0;" src="https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2020/06/22121713/escudo-palmeiras-atual.png" alt="" onclick="palmeiras()">'
+    
+}
+
+
+</script>

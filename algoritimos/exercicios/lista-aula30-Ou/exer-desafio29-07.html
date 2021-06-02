@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--7 (desafio). Crie um programa em HTML/JS o qual:
+OBS: Use, necessariamente pelo menos um "ou" (||)
+a) Pergunte numa combo o tipo de arroz usado (integral ou branco)
+b) Pergunte o tempo de cozimento, em minutos
+c) Pergunte a quantidade de sal usada, em gramas
+d) Ao clicar em "Avaliar arroz", exiba, abaixo dele...
+    A frase "Arroz perfeito", caso:
+      Em caso de arroz branco, 10 minutos e até 10g de sal
+      Em caso de arroz integral, 20 minutos e até 15g de sal
+   A frase "Seu arroz não está perfeito", caso nenhum dos critérios anteriores 
+   tenha sido alcançado
+e) No caso de arroz perfeito, exiba também a imagem de um belo arroz, branco ou 
+integral, conforme o tipo selecionado. Caso contrário, exiba a cara do Jacquin bravo
+ (aquele famoso meme), independe do tipo de arroz.
+-->
+
+
+    <select name="" id="combo_arroz">
+
+        <option>Escola o tipo de arroz usado</option>
+        <option value="1">Arroz branco</option>
+        <option value="2">Arroz integral</option>
+
+    </select>
+
+    <br>
+    <input type="text" placeholder="Digite o tempo de cozimento" id="inp_tempo">
+    <input type="text" placeholder="Digite as gramas de sal" id="inp_sal">
+
+    <br> <br> <button onclick="calcular()">Avaliar arroz</button>
+
+    <div id="msg_muda"></div>
+
+
+</body>
+</html>
+
+
+<script>
+
+function calcular() {
+
+    if (combo_arroz.value == 1 && inp_tempo.value >= 11 || inp_sal.value >= 11
+    || combo_arroz.value == 2 &&  inp_tempo.value >= 21 || inp_sal.value >= 16 ) {
+        msg_muda.innerHTML = '<img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTCd3OeHw4kxnclQuCM7FthVcCwWIQ7p1yWQ&usqp=CAU">'
+                
+    } else if (combo_arroz.value == 1 && inp_tempo.value == 10 && inp_sal.value <= 10 ) {
+        msg_muda.innerHTML = '<br> <br> arroz perfeito <img src= "https://giffiles.alphacoders.com/187/187898.gif">'
+    } else if (combo_arroz.value == 2 && inp_tempo.value == 20 && inp_sal.value <= 15 ) {
+        msg_muda.innerHTML = '<br> <br> arroz perfeito! <img src= "https://giffiles.alphacoders.com/187/187898.gif">'
+    } 
+    
+}
+
+
+</script>

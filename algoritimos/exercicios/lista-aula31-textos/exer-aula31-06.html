@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 6 (desafio). Crie um programa em HTML/JS o qual:
+
+a) Solicite uma senha ao usuário
+
+b) Enquanto ele digita, faça trocas para deixar a senha mais forte. Essas trocas são:
+
+    a ou A => @
+
+    e ou E => 3
+
+OBS: troque TODAS as ocorrências no texto, não só a primeira! Ex: abacate vira @b@c@t3
+
+c) Exiba o valor da senha mais forte logo abaixo,
+ após as trocas (ou seja, o usuário vai vendo o novo valor na medida em que vai digitando) -->
+
+
+    <h2>Vamos melhorar sua senha</h2>
+    digite aqui <input id="inp_senha" onkeyup="analisar()">
+
+    <div id="div_msg"></div>
+    <div id="div_muda"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        var senha = inp_senha.value;
+        var letra = senha[senha.length - 1]
+
+        if (letra == "a" || letra == "A") {
+            div_msg.innerHTML += "@"
+
+        } else {
+            if (letra == "e" || letra == "E") {
+                div_msg.innerHTML += "3"
+            } else {
+                 div_msg.innerHTML += `${letra}`
+        }
+    }
+   
+    div_muda.innerHTML = `<br> ${senha}`     
+
+}  
+
+
+
+</script>

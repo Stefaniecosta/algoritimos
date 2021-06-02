@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--4. Crie um programa em HTML/JS o qual:
+
+a) Pergunte o nome da pessoa que o usuário mais ama na vida
+
+b) Pergunte o quanto o usuário a ama (um número inteiro)
+
+c) Ao clicar num botão "Expressar amor", devem aparacer, abaixo dele, N vezes (conforme o valor em b)) a frase indicada em a), como neste exemplo (considerando o nome "Lady Gaga" e que ama "3")
+
+   Lady Gaga, eu te amo! Sempre lembre disso!
+
+   Lady Gaga, eu te amo! Sempre lembre disso!
+
+   Lady Gaga, eu te amo! Sempre lembre disso!-->
+
+
+   <center>
+          <h3>Nome da pessoa que voce mais ama na vida</h3>
+       <input type="text" placeholder="Nome" id="inp_nome">
+       <br>
+         <h3>Quanto voce ama? de 0 a 100.</h3>
+       <input type="text" placeholder="digite um numero" id="inp_num">
+
+       <br>
+       <br>
+       <button onclick="Expressar()">Expressar amor</button>
+       <br>
+       <br>
+       <div id="frase"></div>
+
+   </center>
+    
+</body>
+</html>
+
+
+<script>
+
+    function Expressar() {
+
+        var nome = inp_nome.value;
+
+         contador = 0;
+         
+         while (contador < inp_num.value) {
+            
+                frase.innerHTML += `<br> ${nome}, eu te amo! <i> sempre lembre disso </i>`
+                contador++
+         }
+
+        
+             
+    }
+
+  
+
+
+</script>

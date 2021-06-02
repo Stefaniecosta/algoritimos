@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--9. Crie um programa em HTML/JS o qual:
+
+a) Solicita as 2 notas do aluno em algoritmos
+
+b) Ao clicar num botão "Verificar resultado", calcule a média entre as notas e exiba, na
+ tela, uma dessas mensagens:
+
+   "Infelizmente reprovado" - Caso a média for menor que 6
+   "Aprovado - Automação, Seg ou Testes" - Caso a média for entre 6 e 7,5
+   "Aprovado - Dev" - Caso a média maior que 7,5
+
+ -->
+
+
+ 
+ <input type="text" placeholder="Primeira nota" id="nota1">
+ <input type="text" placeholder="Segunda nota" id="nota2">
+
+
+ <button>Verificar resultado</button>
+
+ <div id="msg"></div>
+
+
+</body>
+</html>
+
+ <script>
+          
+          var nota1 = Number(nota1.value);
+          var nota2 = Number(nota2.value);
+
+      resul = (nota1 + nota2) / 2; 
+
+      resul >= 6 && resul <= 8 ? msg.innerHTML = "confirma" : msg.innerHTML = "errado";
+
+
+
+ </script>

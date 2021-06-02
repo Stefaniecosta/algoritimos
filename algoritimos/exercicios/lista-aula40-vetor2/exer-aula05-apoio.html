@@ -1,0 +1,65 @@
+<html lang="pt"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05</title>
+</head>
+
+<body>
+    <h3>Cadastro de Alunos</h3>
+    Entre com nome do aluno <input id="ipt_nome" autofocus="">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="mostrar()">Mostrar a Lista</button>
+    <button onclick="invertido()">Mostrar Invertido</button>
+    <br><br>
+    Entre com a pesquisa desejada <input id="ipt_pesq">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+
+
+
+<script>
+
+    var alunos = [];
+
+    function cadastrar() {
+        alunos.push(ipt_nome.value);
+        ipt_nome.value = '';
+    }
+
+    function mostrar() {
+        div_msg.innerHTML = '';
+        for (var index = 0; index < alunos.length; index++) {
+            div_msg.innerHTML += `${alunos[index]} <br>`;
+        }
+
+    }
+
+    function invertido() {
+        div_msg.innerHTML = '';
+        for (var index = alunos.length-1; index >= 0; index--) {
+            div_msg.innerHTML += `${alunos[index]} <br>`;  
+        }
+    }
+
+    function pesquisar() {
+
+        var ax_cont = 0;
+        var ax_pos = '';
+        for (var index = 0; index < alunos.length; index++) {
+            if (ipt_pesq.value == alunos[index]) {
+                ax_cont++;
+                ax_pos += `${index + 1}, `;
+            }
+        }
+        if (ax_cont == 0) {
+            alert(`O aluno ${ipt_pesq.value} não existe`);
+        } else {
+            alert(`O aluno ${ipt_pesq.value} apareceu ${ax_cont} vezes, nas posções 
+                ${ax_pos}`);
+        }
+
+    }
+</script></body></html>

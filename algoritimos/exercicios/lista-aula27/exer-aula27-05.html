@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+      5. Refaça a questão 3 da lista anterior (da pizza) de tal forma que, 
+      caso o valor por amigo fique em até 20,00, deve aparecer a frase "Uhu! Vamos
+       pedir a pizza!"  
+    -->
+
+
+    <div>
+        <h2>Noite com os amigos!</h2>
+    </div>
+
+    <label for="valor">Qual é o valor da pizza?</label>
+    <input type="number" id="valor">
+
+    <br> <br>
+
+    <label for="amigos">Quantos amigos irão comer?</label>
+    <input type="number" id="amigos">
+
+    <button onclick="calcular()">Rola pizza?</button>
+
+    <br> <br> <br>
+
+    <div> Cada amigo vai pagar pela pizza <b id="muda"></b></div>
+    <br>
+    <div id="muda2"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var preco = Number(valor.value);
+        var qtde = Number(amigos.value);
+
+        var resultado = preco / qtde;
+
+        muda.innerHTML = resultado.toFixed(2);
+
+        if (resultado > 20) {
+
+            muda2.innerHTML = `<h2>Deu ruim pizza muito cara!<h2>`
+
+        } else {
+            muda2.innerHTML = `<h2> Uhul! vamos pedir pizza! <h2>`
+        }
+
+
+
+    }
+
+
+
+
+</script>

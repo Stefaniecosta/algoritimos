@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <input type="text" placeholder="Digite o valor do carro a vista" id="inp_vista">
+    <input type="text" placeholder="Digite a taxa de juros ao mes" id="inp_taxa">
+    <input type="text" placeholder="Digite o numero de parcelas" id="inp_parcelas">
+
+    <br>
+
+    <button onclick="calcular()">Exibir prejuizo</button>
+
+    <div id="msg_muda"></div>
+    <div id="barras"></div>
+
+           <div id="valorAvista" style="width: 100%; background-color: aqua; height: 30px; font-size: 15px;">Vida azul:<b id="msg_muda1"></b></div>
+            <br>
+            <div id="valorFinan" style="width: 100%; background-color: rgb(255, 60, 0); height: 30px; font-size: 15px;">Vida vermelho:<b id="msg_muda2"></b></div>
+
+
+            <div id="msg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        //porc diferença numero1+numero2 = valor   numero1/valor e numero2/valor * vzs 100
+    
+        //valor do carro/qtde parcelas.  taxa de juros/100 = 1
+
+        var valorVista = Number(inp_vista.value)
+
+
+        var taxa = (inp_taxa.value) / 100 + 1; // RAZAO
+
+
+        var qntdParc = Number(inp_parcelas.value);
+
+        // Total do Financiamento
+        var exponenciacao = (valorVista * taxa * qntdParc).toFixed(2); 
+        var itemb = valorVista * 0.2;
+        var itemb2 = valorVista - itemb; //Depreciacao do Carro
+        var qntdecarro = exponenciacao / valorVista; //Item C
+
+        msg_muda.innerHTML = `Seu carro vai sair por um total de R$ ${exponenciacao}. 
+Após 1 mês, ele já vai valer só R$ ${itemb2}.
+Porque comprou financiado, vai pagar o correspondente a ${qntdecarro.toFixed(1)} carros`;
+
+   
+    var exponente = parseInt(Math.trunc(exponenciacao)) * 100 /100;
+
+       
+    msg.innerHTML = `${exponente.toFixed(1)}`
+   
+   
+    }
+
+</script>

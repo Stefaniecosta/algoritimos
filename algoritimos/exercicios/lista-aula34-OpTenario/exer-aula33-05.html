@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--5. Um grupo de amigos costuma (ou costumava, antes do Covid19) a se reunir a casa
+         de um deles para pedir e comer pizza. Só que eles sempre estabeleciam um valor
+          máximo de investimento por amigo. Ajude eles criando um programa em HTML/JS o qual:
+
+a) Pergunte o valor máximo por amigo
+
+b) Pergunte o valor da pizza
+
+c Pergunte a quantidade de amigos reunidos
+
+d Ao clicar em "Rola a pizza?", calcule e exiba o valor que cada amigo vai pagar na pizza
+ com uma frase na página como esta "Cada amigo vai pagar R$X pela pizza"
+
+d) Somente caso o valor por amigo passe do valor do item a), exiba também a frase "Deu ruim! 
+Pizza muito cara!", caso contrário, deve aparecer a frase "Uhu! Vamos pedir a pizza!".
+
+ -->
+
+ <h2>Encontro da pizza</h2>
+ <br>
+ <br>
+ <input type="text" placeholder="Quantidade de amigos" id="inp_amigos">
+ <br>
+ <br>
+ <input type="text" placeholder="Valor maximo por amigo" id="inp_valor">
+ <br>
+ <br>
+ <input type="text" placeholder="Valor da pizza" id="inp_pizza">
+ <br>
+
+ <button onclick="calcular()">Rola pizza?</button>
+
+ <br><br>
+
+ <div> Cada amigo vai pagar pela pizza <b id="msg_muda"></b> </div>
+
+
+</body>
+</html>
+
+<script>
+
+    //tenario
+
+    function calcular() {
+
+        var minimo = Number(inp_valor.value);
+        var valor = Number(inp_pizza.value);
+        var amigos = Number(inp_amigos.value);
+
+        var resul = valor / amigos;
+
+        resul > minimo ? msg_muda.innerHTML = `${resul} <br> Deu errado! pizza muito cara` : 
+        msg_muda.innerHTML = `${resul} <br> Uhul vamos pedir pizza`
+        
+        //divide o valor da pizza pela quantidade de amigos, se estiver dentro do valor que cada um 
+        //pode pagar, condição verdadeira
+
+        // se resul  for maior que o minino de cada um,  muda a mensagem no html
+       
+    }
+
+
+
+</script>

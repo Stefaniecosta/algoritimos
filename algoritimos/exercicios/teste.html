@@ -1,0 +1,119 @@
+<select name="" id="sel_fruta">
+    <option value="melancia">Melancia</option>
+    <option value="banana">Banana</option>
+    <option value="cereja">Cereja</option>
+    <option value="laranja">Laranja</option>
+</select>
+<br><br>
+<button onclick="sortear()">Pagar R$2,00 e Sortear</button>
+<button onclick="calcular()">Encerrar a Noitada</button>
+<br><br>
+<div id="div_frutas"></div>
+<br><br>
+<div id="div_msg"></div>
+
+
+
+<script>
+
+    var partida = [];
+    var contador = 0;
+    var sorte = '';
+
+    var ganho_acumulado = 0;
+
+    function sortear() {
+
+        div_frutas.innerHTML = '';
+        div_msg.innerHTML = '';
+
+        for (let index = 0; index < 2; index++) {
+            
+            var sorteio = parseInt(Math.random()*3 +1);
+
+            if (sorteio == 1) {
+                div_frutas.innerHTML += '<img width="100px" src="http://nossofoco.eco.br/wp-content/uploads/2017/04/20191020_234849.jpg" alt="">';
+            } else if (sorteio == 2) {
+              
+                div_frutas.innerHTML += '<img width="100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZc4NhLzwEYb1GQE1fgohUjku9l3N4vUGNhA&usqp=CAU" alt="">';
+            } else if (sorteio == 3) {
+               
+                div_frutas.innerHTML += '<img width="100px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN345XMHBsHWFBcQn6NgryrZuTx4eA1Maag&usqp=CAU" alt="">';
+            } else {
+              
+                div_frutas.innerHTML += '<img width="100px" src="https://static3.depositphotos.com/1000955/120/i/600/depositphotos_1207359-stock-photo-orange.jpg" alt="">';
+            }
+        
+
+
+
+        //     if (sel_fruta.value == 'melancia') {
+        //         sorte = melancia;
+        //         dinheiro();
+        //     } else if (sel_fruta.value == 'banana') {
+        //         sorte = banana;
+        //         dinheiro();
+        //     } else if (sel_fruta.value == 'cereja') {
+        //         sorte = cereja;
+        //         dinheiro();
+        //     } else {
+        //         sorte = laranja;
+        //         dinheiro();
+        //     }
+
+        // }
+        //     function dinheiro() {
+                
+            
+            
+        //     if (sorte == 1) {
+        //         ganho = 1.5;
+        //     } else if (sorte == 2) {
+        //         ganho = 5;
+        //     } else if (sorte == 3) {
+        //         ganho = 21;
+        //     } else if (sorte == 4) {
+        //         ganho = 50;
+        //     } else {
+        //         ganho = 0;
+        //     }
+
+
+
+        //     div_msg.innerHTML = `Você ganhou R$${ganho.toFixed(2)}!`;
+        //     ganho_acumulado += ganho;
+        //     contador++;
+        //     noitada.push(`Rodada${contador}:fruta escolhida ${sel_fruta.value}, 
+        //     fruta sorteada ${melancia} melancias, ${banana} bananas, ${cereja} cerejas e ${laranja} laranjas
+        //      ganho: R$${ganho.toFixed(2)}`);
+
+        
+    }
+
+}
+    function calcular() {
+
+        div_frutas.innerHTML = '';
+        div_msg.innerHTML = `Quantidade de rodadas: ${contador}`;
+        div_msg.innerHTML += `<br>Valor Total gasto: R$${(contador*2).toFixed(2)}`;
+        div_msg.innerHTML += `<br>Valor Total ganho: R$${ganho_acumulado.toFixed(2)}`;
+
+
+
+        if (ganho_acumulado > (contador*2)) {
+            div_msg.innerHTML += `<br>Vá ao caixa e RECEBA R$${(ganho_acumulado- contador*2).toFixed(2)}`;
+        } else if (ganho_acumulado < (contador*2)) {
+            div_msg.innerHTML += `<br>Vá ao caixa e PAGUE R$${(contador*2 - ganho_acumulado).toFixed(2)}`;
+        } else {
+            div_msg.innerHTML += "<br>Incrível... Você nem ganhou e nem perdeu!!!!";
+        }
+        for (let index = 0; index < noitada.length; index++) {
+            div_msg.innerHTML += `<br>${noitada[index]}`;
+            
+        }
+
+        noitada = [];
+        contador = 0;
+        ganho_acumulado = 0;
+    }
+</script>

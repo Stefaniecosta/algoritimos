@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--3. Crie um programa em HTML/JS o qual:
+
+a) Solicite a nota e a frequência do aluno
+
+b) Ao clicar em "Avaliar", exiba algumas dessas frases abaixo do botão
+ (pode ser que mais de uma delas apareça. Nesse caso, mostre uma abaixo da outra):
+
+   "Parabéns, aprovado(a)!" caso sua nota for a partir de 6 e sua frequência a partir de 75
+   "Reprovado(a) por nota!" caso sua nota for menor que 6
+   "Reprovado(a) por frequência!" caso sua frequência for menor que 75-->
+
+
+   
+
+   <input type="text" placeholder="Digite sua nota" id="inp_nota">
+   <input type="text" placeholder="Digite sua frequencia" id="inp_freq">
+
+   <br>
+   <br>
+
+   <button onclick="calcular()">Analisar para esportes esportes</button>
+
+   <br>
+
+   <div id="msg_muda"></div>
+  
+    
+</body>
+</html>
+
+
+<script> 
+
+function calcular() {
+
+
+ var nota = Number(inp_nota.value);   
+var freq = Number(inp_freq.value);
+
+
+
+if (freq >= 1.75 && nota >= 6 ) {
+    msg_muda.innerHTML =  "Parabens aprovado"
+}
+
+
+if ( freq < 75 ) {
+
+    msg_muda.innerHTML = "<br> Reprovado por falta"
+}
+
+
+if ( nota < 6 ) {
+    msg_muda.innerHTML +=  "<br> reprovado por nota"
+}
+
+
+}
+
+
+
+</script>

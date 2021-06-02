@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 132px;
+        }
+    </style>
+</head>
+
+<body>
+    Quantas xicaras de café com leite toma? <input type="text" id="xicaras">
+    <button onclick="Ver()">Ver a quantidade</button>
+    <div id="saida"></div>
+</body>
+
+</html>
+
+<script>
+    function Ver() {
+        saida.innerHTML = '';
+        var quant = Number(xicaras.value);
+        for (var index = 0; index < quant; index++) {
+            saida.innerHTML += `<div><img src="imagens/cafe.jfif" alt=""><img src="imagens/cafe.jfif" alt=""><img src="imagens/leite.jpg" alt="">    </div>`;
+        }
+    }
+</script>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathRandom reforço</title>
+</head>
+<body>
+ 
+<!--Crie um programa em HTML/JS que simula um jogo de luta da seguinte forma:
+OBS: Use operador ternário pelo menos uma vez.
+a) Mostre 2 "barras de vida", ambas ocupando 100% da tela. Uma abaixo da outra. A primeira azul e a segunda vermelha. Ambas tendo 20px de altura. Essas "barras" representam a "vida" de cada lutador.
+b) Abaixo delas o botão "Porrada aleatória". Ao clicar nele, sorteie qual lutador vai apanhar
+
+c) Após saber qual lutador será golpeado, sorteie o valor da força do golpe. Essa força deve variar entre 0 aberto (ou seja, 0.0001) até 20 aberto (ou seja, 19.999). Essa força deve reduzir a largura em porcentagem absoluta o valor da vida. ex: se foi sorteado 15.50 e a vida está ainda em 100%. 100 - 15.5 = 84.5. Supondo um segundo golpe no mesmo cara, com a força sorteada de 4.5. A força vai para 84.5 - 4.5 = 80.
+d) A cada 5 golpes exiba um alert com a frase "Lutador [1 ou 2] está vencendo". Se estiver em empate, não mostre nada. OBS: Use resto da divisão para saber se está a cada 5 golpes
+e) Caso, após o golpe, um dos lutadores fique com vida menor que 0, faça ela ficar em 0 exatamente. E, após isso, exiba um alert "Lutador [1 ou 2] venceu" e faça as barras voltarem para 100% cada, assim como o contador de golpes (para que o programa fique como novo outra vez, como se tivessem dado um F5)
+-->
+
+
+    <center> <!--tag que nao deve ser usada pois caiu em desuso, mas usei só para o exercicio-->
+         
+         <!--Explicação do jogo!! titulo-->
+         <div class="titulo" id="tituloAle" style="border-style: solid 5px; border-color: black;"> 
+         <h2>Bem vindo a luta aleatoria com mathRandom! escolha um personagem</h2>
+         <h2>do time azul e do time vermelho, faça sua aposta e comece!!!</h2>
+        </div>
+
+
+      <!--Time azul perso--> 
+        <div id="div_perso" style="margin-top: 50px; margin-bottom: 50px;">
+             <h2>Jogador azul</h2>
+            <div id="exibir" style="display: block;"></div>
+           <div id="botao1">
+            <button onclick="jogador1()">Lindinha</button>
+            <button onclick="jogador2()">Docinho</button>
+            <button onclick="jogador3()">Florzinha</button>
+        </div>
+        </div>
+
+
+
+          <!--Jogo com as barras -->
+        <div id="div_jogar" style="width: 100%; height: 200px; display: none;">
+            <div id="LutadorAzul" style="width: 100%; background-color: aqua; height: 30px; font-size: 15px;">Vida azul:<b id="msg_muda1"></b></div>
+            <br>
+            <div id="LutadorVermelho" style="width: 100%; background-color: rgb(255, 60, 0); height: 30px; font-size: 15px;">Vida vermelho:<b id="msg_muda2"></b></div>
+            <br>
+            <br>
+            <button onclick="luta()">Porrada aleatoria</button>
+            <button onclick="reiniciar()">reiniciar</button>
+        </div>
+
+
+        <!--Time vermelho perso-->
+        <div id="div_perso2" style="height: 800px; width: 800px; margin-top: 30px; margin-bottom: 50px; ">
+            <h2>Jogador vermelho</h2>
+            <div id="exibir2" style="display: block;"></div>
+           <div id="botao2">
+            <button onclick="jogador11()">Macaco louco</button>
+            <button onclick="jogador12()">Fabulous</button>
+            <button onclick="jogador13()">Goku</button>
+        </div>
+
+        <!--Botão que inicia o jogo-->
+        <div id="botao_jogar" style="margin: 80px;"> 
+        <button onclick="jogar()">Jogar</button>
+    </div>
+        </div>
+
+
+    </center>
+
+</body>
+</html>
+<script>
+
+
+    function jogar() {
+
+        // some os butoes de escolha dos personagens e aparece o jogo com as barras
+
+        div_jogar.style.display = 'block'
+        exibir.style.display = 'block'
+        botao1.style.display = 'none'
+        botao2.style.display = 'none'
+        botao_jogar.style.display = 'none'
+
+    }
+
+   // as vidas começam cheias antes dos golpes
+    var vida1 = 100;
+    var vida2 = 100;
+    var golpe = 0;
+
+    // para exibir a porc da vida
+    msg_muda2.innerHTML = `${vida2}%`
+    msg_muda1.innerHTML = `${vida1}%`
+
+
+         //inicia a luta
+    function luta() {
+
+        var porrada = Math.random() * 11; //sorteio do jogador
+        var ataque = Math.random() * 21; // sorteio golpe
+        golpe++ //contador de golpe
+
+
+        if (porrada < 5) {
+            vida1 -= ataque
+            LutadorAzul.style.width = `${vida1}%`
+            ganhar();
+        } else {
+            vida2 -= ataque
+            LutadorVermelho.style.width = `${vida2}%`
+            ganhar();
+
+        }
+
+        msg_muda2.innerHTML = `${vida2.toFixed(2)}`
+        msg_muda1.innerHTML = `${vida1.toFixed(2)}`
+
+        fim();
+    
+    }
+
+
+    function ganhar() {
+
+        if ((golpe % 5) == 0) {
+            vida1 > vida2 ? alert("jogador azul esta ganhando") : alert("jogador vermelho esta ganhando");
+        }
+    }
+
+
+    function fim() {
+
+
+        // bolean
+
+        if (vida1 <= 0) {
+            alert("O jogador azul ganhou")
+            LutadorVermelho.style.width = 0;
+            msg_muda2.innerHTML = `0`
+        }
+
+        if (vida2 <= 0) {
+            alert("O jogador vermelho ganhou")
+            LutadorAzul.style.width = 0;
+            msg_muda1.innerHTML = `0`
+
+        }
+    }
+
+
+    function reiniciar() {
+
+        alert('A partida terminou mas vamos recomeça-la')
+
+        var vida1 = 100;
+        var vida2 = 100;
+        var golpe = 0;
+
+        msg_muda2.innerHTML = `${vida2}%`
+        msg_muda1.innerHTML = `${vida1}%`
+
+        LutadorAzul.style.width = `${vida1}%`
+        LutadorVermelho.style.width = `${vida2}%`
+
+        div_jogar.style.display = 'none'
+        exibir.style.display = 'block'
+        exibir2.style.display = 'block'
+        botao1.style.display = 'block'
+        botao2.style.display = 'block'
+        botao_jogar.style.display = 'block'
+    }
+
+
+
+//**************************** personagens *********************
+
+// time vermelho
+
+function jogador1() {
+exibir.innerHTML = '<img style="height: 300px; width: 400px;" src= "https://i.pinimg.com/originals/b3/3a/6f/b33a6ff7fd287f9a669308dd943f73e5.gif">'
+
+}
+
+function jogador2() {
+exibir.innerHTML = '<img style="height: 300px; width: 400px;" src= "https://i.pinimg.com/originals/a2/65/a5/a265a57f1ee3cd4f1c949fbf75f9be28.gif" >'
+
+}
+
+function jogador3() {
+exibir.innerHTML = '<img style="height: 300px; width: 400px;" src= "https://minilua.com/wp-content/uploads/2016/09/8-4.gif">'
+
+}
+
+
+//time azul
+
+
+function jogador11() {
+exibir2.innerHTML = '<img  style="height: 300px; width: 400px;" src= "https://pa1.narvii.com/6465/c08cb0660e9526b493c4cf8b545dfbca03ef7030_hq.gif">'
+
+}
+
+function jogador12() {
+exibir2.innerHTML = '<img  style="height: 300px; width: 400px;" src= "https://i2.wp.com/hypescience.com/wp-content/uploads/2013/10/4-2.gif" >'
+
+}
+
+function jogador13() {
+exibir2.innerHTML = '<img  style="height: 300px; width: 400px;" src= "https://i.pinimg.com/originals/9c/aa/71/9caa71ad580b6d2f8ff1cd4137151612.gif">'
+}
+
+
+</script>

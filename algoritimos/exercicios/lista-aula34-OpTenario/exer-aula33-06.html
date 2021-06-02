@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--6. Crie um programa em HTML/JS o qual:
+
+a) Solicita a frequência do aluno
+
+b) Ao clicar em "Analisar frequência", deve aparecer, abaixo dele:
+
+    A imagem de um turista, caso a frequência for menor que 75 OU
+    A imagem de um aluno estudioso, caso a frequência for a partir de 75-->
+
+
+    <h2> Voce anda faltando, meu caro?</h2>
+
+    <br>
+    <br>
+    <input type="text" id="inp_freq" placeholder="Frequencia">
+     <br>
+    <br>
+    <button onclick="analisar()">Analisar Frequencia</button>
+
+    <div id="msg_muda"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        var freq = Number(inp_freq.value);
+
+        freq < 75 ? msg_muda.innerHTML = `<br> Olá aluno, ou melhor, turista? <br> <br> 
+        <img src= "http://zh.rbsdirect.com.br/imagesrc/19175526.jpg?w=640">`
+        : msg_muda.innerHTML = `<br> <img style="height: 300px;" src= "https://i.pinimg.com/originals/2b/53/82/2b5382c425351660542bb06f42294e48.gif">`
+        
+    }
+
+
+
+
+</script>

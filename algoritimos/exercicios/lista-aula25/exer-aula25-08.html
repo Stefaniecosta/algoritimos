@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 08</title>
+</head>
+
+<body>
+    
+    <!--  8. Refaça a questão anterior de tal forma que:
+  a) Se o peso estimado for maior que 800...
+    a.1) Mas menor que 1000, a cor da frase fica a cor azul mesmo
+    a.2) Mas a partir de 1000 a cor da frase fica vermelha -->
+
+        <h2>Elevador controlado</h2>
+
+        <input placeholder="Quantos homens" id="in_homens">
+        <br>
+        <input placeholder="Quantas mulheres" id="in_mulheres">
+        <br><br>
+
+        <button onclick="analisar()">Analisar peso</button>
+
+        <div id="div_resultado"></div>
+
+
+    </body>
+
+</html>
+
+<script>
+    function analisar() {
+        var homens = Number(in_homens.value);
+        var mulheres = Number(in_mulheres.value);
+
+        var peso = homens * 80 + mulheres * 60;
+
+        div_resultado.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${peso}kg`;
+
+        if (peso >= 800) {
+            var frase = ` <br>
+            <span style="color:blue">
+            Será necessário descer alguém para que o elevador se movimente
+            </span>`;
+        
+
+        if (peso >= 1000) {
+
+           var frase = `<span style="color:red">
+                Será necessário descer alguém para que o elevador se movimente
+                </span>`;
+
+
+        }
+
+        div_resultado.innerHTML += frase;
+
+        }
+
+
+    }
+
+
+
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 27 exer 02</title>
+</head>
+<body>
+
+    <!-- 2. Criar um programa em HTML/JS que auxilie o Banco Itado a identificar 
+        quem entrou no cheque especial. a) Solicite o saldo da conta b) Solicite o 
+        valor do débito (ou seja, valor a tirar da conta) c) Ao clicar
+         em "Analisar conta", calcule o novo saldo da conta e exiba a mensagem "o
+          saldo atual da conta corrente é xx.xx". Esta frase deverá estar em negrito 
+          e em vermelho somente se o saldo for menor que zero ou em itálico e azul caso 
+          o saldo for 0 ou mais.
+
+ -->
+       <center>
+                     
+                <div> 
+                         <h1>Banco italo</h1>
+                         <br>
+                         <br>
+                         <h3>Cheque especial</h3>
+
+                </div>
+                <div> 
+                     
+                    <label for="ipt_saldo">Saldo da conta</label>
+                     <input type="number" id="ipt_saldo">
+                     <br> <br>
+               
+                     <label for="ipt_retirar">Valor do debito</label>
+                     <input type="number" id="ipt_retirar">
+                    
+                </div>
+                <br> 
+
+              <button  onclick="analisar()">Analisar conta</button>
+                    
+              <br><br>
+
+             <div id="msg"></div>
+            
+</center>
+    
+</body>
+</html>
+
+<script>
+
+           function analisar() {
+
+            var saldo = ipt_saldo.value - ipt_retirar.value;
+
+            if (saldo < 0) {
+              
+              msg.innerHTML = `<b  style="color: red;"> O saldo da sua conta é ${saldo} <b>`
+               
+           } else {
+
+            msg.innerHTML = `<i style="color: darkblue;"> O saldo da sua conta é ${saldo} <i>`
+           }
+               
+        }
+
+</script>

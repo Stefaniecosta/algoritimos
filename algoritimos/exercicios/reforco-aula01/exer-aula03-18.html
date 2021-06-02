@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--18) No filme clássico "Ghost, do outra lado da vida", o protagonista, 
+        para atazanar a vida da médium canta a seguinte canção...
+1 elefante incomoda muita gente!
+2 elefantes, incomodam, incomodam, muito mais!
+1 elefante incomoda muita gente!
+3 elefantes, incomodam, incomodam, incomodam, muito mais!
+1 elefante incomoda muita gente!
+4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais!
+... e assim por diante
+Crie um programa em HTML/JS o qual:
+a) Solicite ao usuário a quantidade elefantes
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante,
+ seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado
+  em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade.
+Por exemplo, o se o usuário informar 4 em a), devem aparacer 3 estrofes, como no enunciado
+ da questão, de "2 elefantes" até "4 elefantes"
+
+-->
+
+<center> <!--usando só para o exercicio-->
+
+    <h3>Digite a quantidade de elefantes</h3>
+    <input type="text" placeholder="digite o numero" id="id_elefantes">
+    <br>
+    <br>
+    <br>
+    <button onclick="calcular()">Atazanar medium</button>
+    <div id="id_img" style="height: 300px; width: 200px; 
+     display: flex; justify-content: center; align-items: center;"></div>
+
+    <div id="msg_muda" style="font-size:1.5rem;"></div>
+
+</center>
+
+</body>
+</html>
+<script>
+
+function calcular() {
+
+    var palavra = ""
+
+    cont = 1;
+
+    var elefantes = Number(id_elefantes.value);
+
+    while (cont <= elefantes) {
+       
+        id_img.innerHTML = '<img style="height: 200px;" src= "https://i.imgur.com/V6ebg7p.gif?noredirect">'
+        msg_muda.innerHTML += `1 elefantes incomoda muita gente! <br>`;
+        palavra += "incomodam,";
+
+        msg_muda.innerHTML += `${cont} elefantes ${palavra} <br> muito mais <br><br>`;
+        cont++
+    }
+
+}
+
+
+
+</script>
+
+
+
+
+
+    

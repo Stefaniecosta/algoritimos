@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--3. Para ver uma versão de um texto sem os espaços em branco do início, usamos a função .trimStart(). Para ver uma versão de um texto sem os espaços em branco do final, usamos a função .trimEnd(). Crie um programa em HTML/JS o qual:
+
+a) Solicite o nome do usuário
+
+b) Enquanto ele digita, exiba abaixo se é um nome válido ou não.
+
+c) Considere que o nome é obrigatório (ou seja, não pode ser vazio e deve ter pelo menos
+ 10 letras, descartando-se espaços em branco que não sejam para separar as palavras).
+  Em caso de nome válido, exiba na página "Nome OK". Caso contrário, exiba "Nome deve ser informado!" -->
+    
+
+  <h2> me diga teu nome?</h2>
+
+  digite aqui <input id="inp_nome" onkeyup="analisar()">
+  
+  
+  <div id="div_muda"></div>
+  
+      
+  
+  <script> 
+  
+        function analisar() {
+  
+  
+          var nome = inp_nome.value;
+  
+          nome = nome.trimStart(); //limpa os espaços do começo
+          nome = nome.trimEnd(); // limpa os espaços do final
+              
+          //lenght conta os caracteres
+  
+          if (nome.length >= 10 ) {
+  
+              div_muda.innerHTML = `nome valido ${nome.length}`;
+          } else {
+              div_muda.innerHTML = `nome invalido ${nome.length}`;
+              
+          }
+            
+        }
+      </script>
+  
+
+
+</body>
+</html>

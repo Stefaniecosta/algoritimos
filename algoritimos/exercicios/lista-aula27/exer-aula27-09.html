@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        
+        <!-- 9. Crie um programa em HTML/JS o qual: a) Pergunta o tempo que deixou 
+            o arroz cozinhando
+
+b) Ao clicar em "Provar arroz", verifica se o cozimento foi perfeito. Um cozimento 
+perfeito é de 5 minutos, exatamente
+
+c) Caso o cozimento tenha sido perfeito, exiba a frase "Parabéns! Arroz perfeito!" 
+e, abaixo dela, a imagem de um bonito arroz. Caso contrário, exiba a frase "Arroz cru
+ ou cozido demais!" e, abaixo dela, a imagem de um arroz "empapado" ou queimado
+
+-->
+
+        <div>
+            <h1>Quanto tempo seu arroz cozinhou?</h1>
+            <br> <br>
+            <label>Digite o tempo:</label>
+            <input typo="number" id="ipt_tempo">
+            <br> <br> <br>
+
+            <button onclick="analisar()">Provar o arroz</button>
+
+        </div>
+  
+
+        <div id="div_muda"></div>
+
+
+
+
+    </center>
+</body>
+</html>
+
+      <script>
+
+          function analisar() {
+
+            var tempo = Number(ipt_tempo.value);
+
+            if (tempo == 5) {
+
+                div_muda.innerHTML =  `<span> <h1> Arroz perfeito! </h1><br>
+                 <img src="https://gabixavier.com.br/wp-content/uploads/2020/11/onigiri-rice-ballsanime.gif"> </span>`
+
+
+            } else {
+
+                div_muda.innerHTML =  `<span> <h1> Arroz duro demais! agora ele esta triste. </h1><br>
+                 <img src="https://i.pinimg.com/originals/df/4e/91/df4e911adaadd2ed8b272c2f4a59caa5.jpg"> </span>`
+
+                   
+            }
+              
+          }
+
+
+
+
+      </script>

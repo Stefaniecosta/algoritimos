@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div> 
+    Qual o sabor do picole?
+    <select  id= "sel-sabor">
+    <option value="1">uva</option>
+    <option value="2">Morango </option>
+    <option value="3">Limao </option>
+    <option value="4">Chocolate </option>
+    <option value="5">Creme</option>
+    </select>
+    <br> <br> <br>
+
+  <button onclick="picole()">Vai tomar o picole?</button>
+
+  </div>
+
+</body>
+</html>
+
+<script>
+      function picole() {
+
+        var sabor = Number(sel_sabor.value);
+
+        if ( sabor == '2' || sabor == '4') {
+            alert("oba vou tomar picole");
+        } else {
+            alert("deu ruim, nao gosto desse sabor");
+        }
+          
+      }
+
+
+
+      
+</script>

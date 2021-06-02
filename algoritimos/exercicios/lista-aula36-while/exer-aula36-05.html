@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--5. Crie um programa em HTML/JS o qual:
+
+a) Pergunte ao usuário quantos números ele quer sortear
+
+b) Ao clicar em "Sortear números", sorteie N números inteiros entre 0 e 100 -
+ conforme o número indicado em a) - e exiba eles na tela, um embaixo do outro
+
+ -->
+
+    <center>
+
+        <h4>Quantos numeros voce quer sortear?</h4>
+        <input type="text" placeholder="Digite um numero" id="inp_num">
+
+        <br>
+        <br>
+        <button onclick="calcular()">Sortear numero</button>
+
+        <div id="msg_muda"></div>
+
+
+    </center>
+
+
+</body>
+
+</html>
+
+
+<script>
+
+    function calcular() {
+
+        var qtde = Number(inp_num.value); // valor do input
+
+        contador = 0; 
+
+        while (contador < qtde) {  // contador repete ate a quantidade
+            var numero = parseInt(Math.random() * (101 - 1) + 1); // aleatoriza depois de trazer o valor do inpu
+            msg_muda.innerHTML += `<br> ${numero}` // exibe os numeros e acrescenta 
+            contador++ // adiciona 1 ao valor do contator, toda vez que o laço repetir
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+</script>

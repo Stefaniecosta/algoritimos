@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--5. Crie um programa em HTML/JS em que:
+
+a) Tenha um campo para cadastrar alunos em uma lista e um botão "Cadastrar"
+ (mostre como a lista está a cada novo aluno inserido).
+
+b) Tenha um campo e um botão para pesquisar alunos, onde o usuário possa
+ verificar se o aluno em questão já existe - mostre quantas vezes o aluno em
+  questão aparece na lista (pode ser em um alert).
+
+*Obs o campo para pesquisar alunos pode ser o mesmo para inserir novos.
+
+ -->
+
+
+ <input type="text" id="inp_cadastro" placeholder="cadastre aqui">
+ <button onclick="cadastrar()">Cadastrar</button>
+
+ <input type="text" id="inp_pesquisa" placeholder="pesquise um aluno">
+ <button onclick="pesquisar()">Pesquisar</button>
+
+
+ <div id="msg_muda"></div>
+    
+</body>
+</html>
+
+<script>
+
+var alunos = [];
+
+function cadastrar() {
+
+    var novo_aluno = inp_cadastro.value; //pagando o valor do inpu
+
+    alunos.push(novo_aluno);
+
+    msg_muda.innerHTML += `<br> ${novo_aluno}`
+   
+}
+
+function pesquisar() {
+
+    var pesquisa = inp_pesquisa.value;
+
+    qtde_vzs = 0;
+
+  for (var contador = 0; contador < alunos.length; contador++) {
+       if (alunos[contador] ==  inp_pesquisa.value ) {
+           qtde_vzs++
+       }
+  
+ }
+
+ if (qtde_vzs == 0) { 
+     alert(`não existe ${pesquisa} nessa posição`)
+     
+ } else {
+    alert(`O aluno ${pesquisa} foi encontrado ${qtde_vzs} vezes nessa lista`)
+
+ }
+
+    
+    
+}
+
+
+
+
+</script>

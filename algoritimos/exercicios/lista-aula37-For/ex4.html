@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="Contar()">Conte de 99 a 0</button>
+    <div id="saida"></div>
+</body>
+
+</html>
+<script>
+    function Contar() {
+        saida.innerHTML = '';
+        for (var cont = 99; cont >-1; cont--) {
+            saida.innerHTML += `${cont} <br>`;
+        }
+    }
+</script>

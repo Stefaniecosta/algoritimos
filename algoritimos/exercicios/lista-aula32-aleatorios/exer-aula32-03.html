@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--
+3. Crie um programa em HTML/JS o qual:
+
+a) Solicite ao usuário que digite seu número inteiro da sorte. Esse número deve ser entre 1 e 10
+
+b) Ao clicar num botão "Sortear" valide se o usuário digitou entre 1 e 10. Caso não, exiba
+ uma alert orientando sobre o erro. Caso contrário, faça um sorteio de números inteiros entre 
+ 1 e 10. A cada sorteio que fizer, atualize um contador na própria página (ex: um texto dizendo 
+ "Sorteios realizados: 12")
+
+c) Caso o número sorteado em b) for o número da sorte informado em a), exiba um texto
+ em qualquer lugar da página dizendo "Parabéns, você foi sorteado(a) após X sorteios!", 
+ onde X é a quantidade de sorteios realizados-->
+
+
+
+    <center>
+
+        <input type="text" placeholder="Digite seu numero da sorte" id="inp_sorteio">
+
+        <br>
+        <br>
+        <button onclick="calcular()">Sortear</button>
+
+        <div>Sorteio de numeros aleatorios: <b id="num"></b> Numero de sorteios: <b id="contar"></b> </div>
+        <div id="msg_muda"></div>
+
+    </center>
+
+</body>
+
+</html>
+
+
+<script>
+
+    var contador = 0
+
+    function calcular() {
+
+        var numero = Number(inp_sorteio.value);
+        var sorteio = parseInt(Math.random() * (11 - 1) + 1);
+
+        contador++
+
+        if (numero <= 0 || numero > 10) {
+            alert("ocorreu um erro. o numero tem que ser inteiro de 1 a 10")
+        } else if (numero == sorteio) {
+            msg_muda.innerHTML = `Parabéns, você foi sorteado(a) após ${contador} sorteios!`
+        } else {
+            num.innerHTML = `${sorteio}`
+            contar.innerHTML = `${contador}`
+        }
+
+    }
+
+
+
+</script>

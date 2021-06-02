@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 25 variavel global</title>
+</head>
+<body>
+
+    <h2> Utilização de variavel global</h2>
+   
+    voce clicou <b id="b_qtde">0</b> vezes em mim
+
+    <br> <br>
+
+    <button onclick="conta()">Clica em mim</button>
+    <button onclick="conta100()">Somar 100</button>
+    <button onclick="tira10()">subtrair 10</button>
+
+</body>
+</html>
+
+<script>
+
+   // uma variavel global fica fora da função.
+   // a variavel global é criada quando recarrega a pagina, mas o valor
+   // é compartilhado com todas as demais funçoes
+
+   var vezes = 0;
+
+function conta() {
+    // o "++" vai somar o valor da variavel e os novos valores
+    vezes++; 
+    b_qtde.innerHTML = vezes; 
+}
+
+function conta100(){
+
+    vezes+=100;
+    b_qtde.innerHTML = vezes; 
+    
+}
+
+function tira10() {
+
+vezes-=10;
+b_qtde.innerHTML = vezes; 
+
+}
+
+</script>

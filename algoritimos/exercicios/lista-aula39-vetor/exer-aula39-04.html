@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--
+4. Crie um programa no qual o usuário vai cadastrando nomes de alunos.
+
+Porém, na medida que vai cadastrando, ele vai aparecendo um abaixo do outro 
+na ordem inversa em que foram cadastrados (ou seja, o último sempre fica no topo,
+ o penúltimo em abaixo dele e assim por diante).-->
+
+
+
+ 
+ <input type="text" placeholder="digite o nome de um aluno" id="inp_aluno">
+ <button onclick="cadastrar()">Cadastrar</button>
+
+ <div id="msg_muda"></div>
+    
+</body>
+</html>
+
+
+<script>
+
+ alunos = []
+
+ function cadastrar() {
+         
+    msg_muda.innerHTML = '';
+    var aluno = String(inp_aluno.value);
+
+    alunos.push(aluno)
+
+
+    for (var cont = alunos.length; cont > 0; cont-- ) {
+        var resul = alunos[cont - 1];
+        msg_muda.innerHTML += `nome: ${resul} <br>`
+    }
+     
+ }
+
+    // let nome = [];
+
+    // function Cadastrar() {
+    //     saida.innerHTML='';
+    //     let quantnome=txt_nome.value;
+    //     nome.push(quantnome);
+        
+    //     for(let cont = nome.length; cont>0;cont--){
+    //         saida.innerHTML += nome[cont-1];
+    //         saida.innerHTML +='</br>';
+    //     }
+    // }
+
+
+</script>

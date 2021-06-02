@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova continuada</title>
+</head>
+<body>
+
+    <div>
+        <h2>Campo minado da hora!</h2>
+        <br>
+        <button onclick="calcular()">Novo jogo</button>
+
+    </div>
+
+    <div>Minas: <span id="minas"></span></div>
+    <div>Explosões: <span id="explosao"></span></div>
+    <div>Pontos: <span id="pontos"></span></div>
+
+    <br>
+    <br>
+
+
+    <div id="img"></div>
+    <img style="display: block; float: left;" id="campo1" onclick="imagem1()">
+    <img src="" style="display: block;" id="campo2" onclick="imagem2()">
+    <img src="" style="display: block; float: left;" id="campo3" onclick="imagem3()">
+    <img src="" style="display: block;" id="campo4" onclick="imagem4()">
+
+    </div>
+
+</body>
+</html>
+<script>
+
+    var clicks = 0;
+
+    function imagem1() {
+
+        campo1.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+        pontos.innerHTML = "100 pontos";
+    }
+
+    function imagem2() {
+
+        campo2.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+        minas.innerHTML = "01";
+        explosao.innerHTML = "01";
+        
+    }
+
+
+    function imagem3() {
+
+        campo3.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+        pontos.innerHTML = "200 pontos";
+
+    }
+
+    function imagem4() {
+
+        campo4.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+        minas.innerHTML = "02";
+        explosao.innerHTML = "02";
+    }
+
+
+    function calcular() {
+
+        campo1.src = "https://image0.flaticon.com/icons/png/128/84/84042.png"
+        campo2.src = "https://image0.flaticon.com/icons/png/128/84/84042.png"
+        campo3.src = "https://image0.flaticon.com/icons/png/128/84/84042.png"
+        campo4.src = "https://image0.flaticon.com/icons/png/128/84/84042.png"
+
+    }
+
+</script>

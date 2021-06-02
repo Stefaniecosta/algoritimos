@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--
+5. Faça uma versão melhorada da questão anterior:
+a) Além de mostrar a última nota de avaliação sorteada, mostre a média de todas 
+as avaliações abaixo. Ex: "Média geral: 3.9"
+b) O emoji que aparece agora é de acordo com a média e não com a última avaliação
+#ficadica: Essa média é a soma de todas as avaliações dividida pela quantidade de
+ avaliações realizadas
+-->
+    
+<center>
+
+    <h2>Vamos sortear numeros aleatorios</h2>
+
+    digite aqui <button id="inp_frase" onclick="analisar()">Avaliar</button>
+
+    <br>
+    <div id="div_muda"></div>
+
+</center>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+function analisar() {
+
+    var numero = (Math.random() * (6 + 0) - 1);
+
+
+    if (numero <= 0.5) {
+        div_muda.innerHTML = `<br> <br> muito triste ${numero.toFixed(1)} <br> <img 
+    src= "https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png" >`
+    } else if (numero <= 1.5) {
+        div_muda.innerHTML = `<br> <br> meio triste ${numero.toFixed(1)} <br> <img 
+    src= "https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png" >`
+    } else if (numero <= 3.5) {
+        div_muda.innerHTML = `<br> <br> neutro ${numero.toFixed(1)} <br> <img 
+    src= "https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png" >`
+    } else if (numero <= 4.5) {
+        div_muda.innerHTML = `<br> <br>  feliz ${numero.toFixed(1)} <br> <img 
+    src= "https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png">`
+    }
+    else if (numero >= 4.5) {
+        div_muda.innerHTML = `<br> <br> muito feliz ${numero.toFixed(1)} <br> <img 
+    src= "https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png" > `
+    }
+
+
+}
+
+
+
+
+
+
+</script>

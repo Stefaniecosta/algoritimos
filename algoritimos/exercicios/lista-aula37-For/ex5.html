@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="Contar()">Conte de 5 e 5</button>
+    <div id="saida"></div>
+</body>
+
+</html>
+<script>
+    function Contar() {
+        saida.innerHTML = '';
+        for (var cont = 0; cont < 201; cont+=5) {
+            saida.innerHTML += `${cont} <br>`;
+        }
+    }
+</script>

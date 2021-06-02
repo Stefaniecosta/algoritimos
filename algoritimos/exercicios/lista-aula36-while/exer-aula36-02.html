@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Refaça o programa anterior de tal forma que, antes de cada frase apareça um contador. Ex:
+   1. Boa tarde
+   2. Boa tarde
+   ...
+   7. Boa tarde
+
+ -->
+
+ <center>
+
+    <button onclick="calcular()" id="vezes">Diga algo sobre a quarentena</button>
+
+    <div id="frase"></div>
+</center>
+
+
+
+
+</body>
+</html>
+<script>
+
+
+function calcular() {
+
+    var qtde = 1;
+  
+    while (qtde <= 7) {
+        frase.innerHTML += `<br> ${qtde} Quem não é visto não é lembrado`;
+         qtde++;
+    }
+   
+}
+
+
+</script>
+
+
+    

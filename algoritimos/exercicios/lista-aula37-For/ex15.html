@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Contar()">Curto 3 e 5</button>
+    <div id="saida"></div>
+</body>
+</html>
+<script>
+    function Contar(){
+        saida.innerHTML = '';
+        for(var cont=1;cont<100;cont++){
+            var tri = (cont%3==0);
+            var penta = (cont%5==0);
+            if(tri || penta){
+                if(tri){
+                    saida.innerHTML +='É TRI! ';
+                }
+                if(penta){
+                    saida.innerHTML +='É PENTA! ';
+                }
+            } else 
+            saida.innerHTML+= cont;
+            saida.innerHTML+='<br>';
+        }
+    }
+</script>

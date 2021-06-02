@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+
+        <!--2. Crie um programa em HTML/JS que:
+a) Solicite a média e a frequência do aluno
+b) Ao clicar em "Avaliar", exiba na página, abaixo do botão:
+   "Você estuda muito!" (somente caso a média for 8 ou mais)
+   OU
+   "Você poderia estudar mais" (caso a média for menor que 8)
+c) Além das frases de b), exiba, abaixo, "Você falta muito!" caso a
+ frequencia for até 60 ou "Você falta pouco!" caso a frequência for 60 mais que 60.   
+
+  -->
+
+        <div>
+
+            <label for="">Informe a frequencia do aluno</label>
+            <input type="number" id="ipt_freq">
+
+            <br><br>
+
+            <label for="">Informe a media do aluno</label>
+            <input type="number" id="ipt_media">
+
+            <br> <br>
+
+            <button onclick="calcular()">Avaliar</button>
+        </div>
+
+        <div id="msg"></div>
+
+
+    </center>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var frequencia = Number(ipt_freq.value)
+        var media = Number(ipt_media.value)
+
+        if (media > 10) {
+            msg.innerHTML = "media invalida";
+
+        } else {
+            if (media <= 6) {
+                msg.innerHTML = "Deveria estudar mais";
+
+            } else {
+                msg.innerHTML = "Voce estuda muito!";
+            }
+
+            if (frequencia <= 60) {
+                msg.innerHTML += "<br> Voce falta muito!";
+            } else {
+                msg.innerHTML += "<br> Voce falta pouco";
+            }
+        }
+
+
+
+    }
+
+</script>

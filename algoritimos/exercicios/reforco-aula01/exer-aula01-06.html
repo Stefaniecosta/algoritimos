@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h2>Cofrinho</h2>
+
+    <div>Valor guardado no cofrinho: <b id="msg_muda"> </b></div>
+    <input type="text" placeholder="Digite o valor que queira depositar" id="inp_valor">
+
+    <br>
+    <br>
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="retirar()">Tirar toda a grana</button>
+    <br>
+    <br>
+    <div>Quantidade de depositos feitos: <b id="msg_muda1"></b></div>
+    <div>Quantidade de retiradas feitas: <b id="msg_muda2"></b></div>
+
+
+
+</body>
+</html>
+<script>
+
+ 
+var depositos = 0;
+var retiradas = 0;
+
+var dinheiro = 0;
+
+
+
+function depositar() {
+
+    
+    var valor = Number(inp_valor.value);
+    dinheiro += valor;
+    depositos++
+    msg_muda.innerHTML = `${dinheiro.toFixed(2)}`
+    msg_muda1.innerHTML = `${depositos}`
+    
+}
+
+function retirar() {
+
+var valor = Number(inp_valor.value);
+ dinheiro -= valor;
+retiradas++
+msg_muda.innerHTML = `${dinheiro.toFixed(2)}`
+msg_muda2.innerHTML = `${retiradas}`
+
+}
+
+
+
+
+
+</script>

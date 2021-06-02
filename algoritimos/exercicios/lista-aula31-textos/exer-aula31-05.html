@@ -1,0 +1,55 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--3.5. Melhore a questão 3 de tal forma que um nome não pode conter a palavra 'fogo'. 
+        Se tiver, deve mostrar a frase "Com fogo não se brinca!"  -->
+    
+
+  <h2> me diga teu nome?</h2>
+
+  digite aqui <input id="inp_nome" onkeyup="analisar()">
+  
+  
+  <div id="div_muda"></div>
+  
+      
+  
+  <script> 
+  
+        function analisar() {
+  
+  
+          var nome = inp_nome.value;
+  
+          nome = nome.trimStart(); //limpa os espaços do começo
+          nome = nome.trimEnd(); // limpa os espaços do final
+              
+          //lenght conta os caracteres
+  
+          if (nome.length >= 10 && nome.indexOf('fogo') < 0 ) {
+  
+              div_muda.innerHTML = `nome valido ${nome.length}`;
+          } else { 
+               if (nome.indexOf('fogo') >= 0 ) { 
+              div_muda.innerHTML = 'com fogo nao se brinca!';
+              
+          } else {
+            div_muda.innerHTML = `nome invalido ${nome.length}`;
+          }
+            
+        }
+
+    }
+      </script>
+  
+
+
+</body>
+</html>

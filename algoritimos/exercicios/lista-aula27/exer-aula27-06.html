@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exer 06</title>
+</head>
+
+<body>
+
+    <!-- 6. Refaça a questão anterior de tal forma que o valor máximo por amigo não 
+    seja fixo em 20,00, mas que seja um campo informado pelo usuário na página. 
+    Use esse valor para saber se vai mostrar a frase de lamento ou de compra da pizza -->
+<center>
+    <div>
+        <h2>Noite com os amigos!</h2>
+    </div>
+
+    <br><br>
+
+    <label>Qual o preço da pizza?</label>
+    <input type="number" id="ipt_preco">
+
+    <br><br>
+
+
+    <label>Quantos amigos?</label>
+    <input type="number" id="ipt_amigos">
+
+    <br><br>
+
+
+    <label>Qual o valor maximo da pizza por amigo?</label>
+    <input type="number" id="ipt_maximo">
+
+    <br> <br>
+
+    <button onclick="calcular()">vai rolar?</button>
+
+    <br> <br>
+
+    <div> Cada amigo vai pagar pela pizza <b id="muda"></b></div>
+
+    <div id="div_muda"></div>
+ 
+</center> 
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var amigos = Number(ipt_amigos.value);
+        var preco = Number(ipt_preco.value);
+
+        var limite = Number(ipt_maximo.value);
+
+        var pizza = preco / amigos;
+
+        muda.innerHTML = pizza.toFixed(2);
+
+        if (pizza > limite) {
+
+            div_muda.innerHTML = `<h2>Deu ruim pizza muito cara!<h2>`
+
+        } else {
+
+            div_muda.innerHTML = `<h2>Bora comer!<h2>`
+
+        }
+    }
+
+
+</script>

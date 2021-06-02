@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+
+<body>
+
+    <!-- 3. O Mercado BOM DOCE está em promoção, qualquer chocolate custa R$ 3,00 cada,
+    se a compra for acima de uma dúzia de chocolates o preço cai para R$ 2,50 cada um.
+     Criar um programa em HTML/JS que auxilie o Mercado a calcular o valor da compra de
+     chocolate
+
+a) Solicite a quantidade de chocolates comprados; b) Após clicar num botão "Compra", exiba
+ a mensagem "o valor da sua compra foi de xxxxxx,xx". OBS. Faça o diagrama de atividades e o 
+ teste de mesa para este exercício. -->
+
+
+    <center>
+        <div>
+            <h1><i>Mercado BOM DOCE</i></h1>
+            <p> Estamos em promoção, cada chocolate custa $3,00 reais!
+                mas acima de uma duzia, o preço cai r$ 2,50</p>
+        </div>
+
+        <div>
+             <br> <br>
+            <label>Informe a quantidade de chocolates</label>
+            <input type="number" id="ipt_choco">
+            <br> <br>
+
+            <button onclick="resul()">Comprar</button>
+        </div>
+          <br> <br>
+        <div id="div_msg"></div>
+
+        </center>
+</body>
+
+</html>
+
+<script>
+       
+       function resul() {
+              
+        var calculo = Number(ipt_choco.value) * 3;
+        
+        div_msg.innerHTML = `<h2> O valor da sua compra em chocolates é de R$ ${calculo.toFixed(2)} <h2>`
+               
+        if (ipt_choco.value >= 12 ) {
+               calculo = Number(ipt_choco.value) * 2.50;
+            div_msg.innerHTML = `<h2> O valor da sua compra em chocolates é de R$ ${calculo.toFixed(2)} <h2>`; 
+
+        } 
+    
+       }
+     
+</script>

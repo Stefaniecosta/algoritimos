@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="preferencia">
+        <option value="0">DC</option>
+        <option value="1">Marvel</option>
+    </select>
+    <button onclick="sortearProgramacao()">Ver programação semanal na TV</button>
+    <p id="mensagem"></p>
+</body>
+</html>
+<script>
+    function sortearProgramacao() {
+        for(var i = 0; i < 5; i ++) {
+            if (parseInt(Math.random() * 2) == Number(preferencia.value)) {
+                mensagem.innerHTML = `Você verá um filme que gosta no ${i + 1}° dia`;
+                break;
+            }
+            mensagem.innerHTML = "É, ou lê um livro ou assiste um filme que não gosta mesmo";
+        }
+    }
+</script>

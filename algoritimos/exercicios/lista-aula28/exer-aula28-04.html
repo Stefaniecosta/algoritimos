@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 4. Melhore o programa anterior de tal forma que:   
+a) Já não só mais 3 mensagens possíveis e sim 3:
+   "Frio!" (na cor azul e somente caso a temperatura for menos que 20,5)
+   OU
+   "Conforvável :)" (na cor verde e somente caso a temperatura for entre 20,5 e 23)
+   OU
+   "Quente!" (na cor vermelha e somente caso a temperatura for maior que 23) -->
+
+     <div>
+                  <h1>Vamos checar a temperatura do ambiente</h1>
+
+                  <br><br>
+
+                  <label>Digite a temperatura doo ambiente!</label>
+                  <input type="number" id="ipt_temp">
+                  <br> <br> <br> <br> 
+
+                  <button onclick="analisar()">Analisar clima</button>
+
+                  <div id="div_muda"></div>
+
+     </div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        var temperatura = Number(ipt_temp.value);
+
+        if ( temperatura < 21.5)
+         {
+               div_muda.innerHTML = '<h1 style="color: cyan;" > frio <h1>';
+         } else { 
+             if ( temperatura <= 23) {
+                div_muda.innerHTML = '<h1 style="color: darkgreen; " > Confortavel <h1>';       
+             } else {
+                div_muda.innerHTML = '<h1 style="color: red;" > Quente! <h1>'; 
+             }
+           
+         }
+        
+    }
+
+</script>

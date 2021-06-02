@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #F2F2F2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="https://media.discordapp.net/attachments/581836795000389633/713429209489342529/campo-vazio.png" alt="">
+    <img src="https://media.discordapp.net/attachments/581836795000389633/713790064425041942/mina.png" alt="">
+    <img src="https://media.discordapp.net/attachments/581836795000389633/713791541407121408/bloco.png" alt=""> -->
+
+    <!-- <img src="${campo_bloco}" onclick="this.src='${campo_mina}';Revelar()" alt=""> -->
+    <h1>Campo Minado da hora!</h1>
+    <button onclick="Jogar()">Novo jogo</button>
+    <br><br>
+    Minas: <b id="txt_minas">?</b> <br>
+    Explosões: <b id="txt_explode">0</b> <br>
+    Pontos: <b id="txt_pontos">0</b>
+    <div id="saida"></div>
+</body>
+
+</html>
+<script>
+    var img_vazio = 'https://media.discordapp.net/attachments/581836795000389633/713429209489342529/campo-vazio.png';
+    var img_mina = 'https://media.discordapp.net/attachments/581836795000389633/713790064425041942/mina.png';
+    var img_bloco = 'https://media.discordapp.net/attachments/581836795000389633/713791541407121408/bloco.png';
+    var campo_vazio = `<img src="${img_vazio}"`;
+    var campo_mina = `<img src="${img_mina}" >`;
+    var campo_bloco_mina = `<img src="${img_bloco}" onclick="this.src='${img_mina}';Bomba();">`;
+    var campo_bloco_vazio = `<img src="${img_bloco}" onclick="this.src='${img_vazio}';Vazio();">`;
+
+    var pontos = 0;
+    var explode = 0;
+
+    function Jogar() {
+        //limpeza de campos
+        saida.innerHTML = ``;
+        txt_minas.innerHTML = '?';
+        txt_explode.innerHTML = '0';
+        txt_pontos.innerHTML = '0';
+        pontos = 0;
+        explode = 0;
+        //Criação de variaveis
+        var total_campos = 12;
+        var quant_minas = parseInt(Math.random() * 6 + 1);
+        var aux_minas = 0;
+        var aux_vazio = 0;
+        txt_minas.innerHTML = quant_minas;
+        var aux_quebra = 0;
+        for (var cont = 0; cont < total_campos; cont++) {
+            var sorteio = parseInt(Math.random() * 2);
+            var sorteio_minas = (sorteio == 1 && (aux_minas < quant_minas));
+            var falta_minas = (sorteio == 0 && aux_vazio < (total_campos - quant_minas));
+            if (sorteio_minas) {
+                saida.innerHTML += `${campo_bloco_mina}`;
+                aux_minas++;
+                aux_quebra++;
+            } else if (falta_minas) {
+                saida.innerHTML += `${campo_bloco_vazio}`;
+                aux_vazio++;
+                aux_quebra++;
+            } else {
+                total_campos++;
+            }
+            var quebra_de_linha = (aux_quebra % 4 == 0);
+            if (quebra_de_linha) {
+                saida.innerHTML += '</br>';
+            }
+        }
+    }
+
+    function Vazio() {
+        pontos+=100;
+        txt_pontos.innerHTML= pontos;
+    }
+
+    function Bomba(){
+        explode+=1;
+        txt_explode.innerHTML=explode;
+    }
+
+</script>

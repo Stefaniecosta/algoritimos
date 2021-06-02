@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 2. Crie um programa em HTML/JS o qual avaliará se o aluno foi aprovado no semestre:
+
+a) Solicite as duas notas do aluno:
+
+b) Solicite a frequência do aluno
+
+c) Ao clicar em "Verificar", exibe o alert "ALUNO APROVADO" quando cada uma das notas seja >= 5, media a partir de 6 e frequência a partir de 75. Caso contrário o alert será "ALUNO REPROVADO"
+
+ -->
+
+<center>
+    
+          <h2>Vamos avalia-lo</h2>
+    <input type="number" placeholder="digite sua nota" id="inp_nota">
+    <input type="number" placeholder="digite sua segunda nota" id="inp_nota2">
+     <br>
+     <br>
+     <input type="number" placeholder="digite sua frequencia" id="inp_freq">
+
+          <button onclick="calcular()">Verificar</button>
+
+          <div id="div_muda"></div>
+
+</center>
+ 
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        var nota = Number(inp_nota.value);
+        var segundaN = Number(inp_nota2.value);
+
+
+        var media = (nota + segundaN) /2;
+
+        var freq = Number(inp_freq.value);
+
+        if (media >=5 && freq >=75 ) {
+            alert("aluno aprovado")
+        } else { 
+            alert("aluno reprovado")
+        }
+        
+    }
+
+
+
+</script>

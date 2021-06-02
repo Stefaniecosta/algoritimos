@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+
+    <style>
+
+button {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: none;
+    border-radius: 20px;
+}
+
+button:hover {
+    border-color: aqua;
+}
+
+    </style>
+
+    <!--
+07). Crie um programa em HTML/JS que simule um jogo de luta simples.
+a) Nada deve aparecer na tela, a princípio, a não ser um botão "Iniciar Jogo". 
+Ao clicar nele, aparecem os itens a seguir...
+b) Aparecem as fotos de 2 lutadores (como as dos exemplos abaixo). E, abaixo deles,
+ uma "barra de vida", que ocupa 100% da largura da tela.
+
+ 
+
+
+ 
+
+c) Abaixo das imagens e barras, deve haver o texto:
+   Golpes sofridos pelo lutador 1: 0
+   Golpes sofridos pelo lutador 2: 0
+
+d) Sempre que for clicada na imagem um dos lutadores, seu "contador" 
+aumenta em 1 e sua barra reduz em 5% bruto (não relativo). Ex: estava em 90%, vai para 85%. Estava em 75%, vai para 70%.
+
+-->
+
+<center> <!--usando apenas pro exercicio-->
+
+<div class="">
+<h2>Prepare-sem todos em seus devidos assentos, 
+    a luta historica irá começar.</h2>
+    <h2>Façam sua aposta</h2>
+    <button id="btn" onclick="iniciar()">Iniciar o jogo</button>
+</div>
+
+
+<div id="imagens" style="display: none;">
+
+<h2>Jogador 1</h2>
+<img onclick="jogador1()" style="height: 160px; width: 200px;" src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2018/08/cropped-Goku.jpg" alt="">
+
+<h2 style="margin-top: 30px;">Jogador 2</h2>
+<img onclick="jogador2()" style="height: 160px; width: 200px;" src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2018/08/cropped-Goku.jpg" alt="">
+
+
+<div id="Lutador1" style="width: 100%; background-color: rgb(255, 0, 0); height: 30px; font-size: 15px;">Vida jogador 1:<b id="msg_muda1"></b></div>
+<div id="Lutador2" style="width: 100%; background-color: rgb(255, 0, 0); height: 30px; font-size: 15px; margin-top: 30px;">Vida jogador 2:<b id="msg_muda1"></b></div>
+</div>
+
+<div id="info" style="display: none;"> 
+<div><h4>Golpes sofridos pelo jogador 1: </h4><b id="golpe1"></b></div>
+<div><h4>Golpes sofridos pelo jogador 2:</h4><b id="golpe2"></b></div>
+</div>
+</center>
+    
+</body>
+</html>
+
+
+<script>
+
+   var vida = 100;
+   var golpesJogador1 = 0;
+   var golpesJogador2 = 0;
+   clicadas = 0
+
+function iniciar() {
+
+     imagens.style.display = "block"
+     btn.style.display = "none"
+    info.style.display = "block"
+   
+     
+}
+
+
+function jogador1() {
+
+    clicadas++
+
+    golpesJogador1++
+
+    for (var index = 0; index < clicadas; index++) {
+          vida -=  5;
+    }
+
+    golpe1.innerHTML = `${golpesJogador1}`
+    msg_muda1.innerHTML = `${vida}`
+    Lutador1.style.width = `${vida}%`
+    
+}
+
+
+
+</script>

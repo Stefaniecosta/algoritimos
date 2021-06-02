@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+
+    <style>
+        img {
+            height: 150px;
+            width: 150px;
+        }
+
+        body {
+            background-color: rgb(70, 93, 109);
+            color: rgb(255, 255, 255);
+            font-size: 2rem;
+        }
+
+        input {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            width: 300px;
+            margin: 0 0 1em;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1.5em;
+            background: #fff;
+            resize: none;
+            outline: none;
+        }
+
+        button {
+
+            border-radius: 50px;
+            background-color: #03313D;
+            height: 50px;
+            width: 140px;
+            padding: .5rem;
+            margin: -50px 0 0 15px;
+            border: none;
+            font-size: 16px;
+            color: white;
+            position: relative;
+            top: 4rem;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+    </style>
+
+    <center>
+
+        <div id="div_inicio">
+            <input id="nome" placeholder="Nome" type="text">
+            <br>
+            <br>
+            <input id="id_loja" placeholder="Loja" type="text">
+            <br>
+            <br>
+            <input id="id_conta" placeholder="Conta" type="text">
+            <br>
+            <br>
+            <input id="iddigito" placeholder="Dígito" type="text">
+            <br>
+            <br>
+            <button onclick="calcular()">validar</button>
+        </div>
+
+
+
+        <div id="id_entrar" style="display: none;">
+            <div id="msg_muda"></div>
+            <br>
+            <input id="id_senha" placeholder="digite sua senha" type="password">
+            <br>
+            <br>
+            <button onclick="limpar()">Limpar</button>
+            <button onclick="entrar()">Entrar</button>
+            <br>
+            <br>
+            <div id="div_senha" style="margin-top: 40px;"></div>
+        </div>
+
+
+
+
+        <div id="id_produtos" style="display: none;">
+            <select name="" id="id_produto" onchange="produto()">
+                <option value="">- Selecione -</option>
+                <option value="cadeira de praia">cadeira de praia</option>
+                <option value="cadeira de jardim">cadeira de jardim</option>
+            </select>
+            <br>
+            <br>
+            <div id="cadeiraPraia_img"></div>
+            <div id="cadeiraJardim_img"></div>
+        </div>
+
+
+
+
+        <div id="id_material" style="display: none;">
+            <select name="" id="select_mat" onchange="select_qtde()">
+                <option value="">- Selecione -</option>
+                <option value="alumínio">alumínio</option>
+                <option value="ferro">ferro</option>
+                <option value="plástico">plastico</option>
+            </select>
+        </div>
+
+
+
+        <div id="id_qtdee" style="display: none; height: 400px; margin-top: 40px;">
+            <br>
+            <h4>Quantidade de cadeiras</h4>
+            <br>
+            <br>
+            <input id="ipt_qtd" type="text">
+            <br>
+            <br>
+            <button onclick="calcular_orca()">Calcular</button>
+            <br>
+            <br>
+            <div id="id_orca" style=" height: 200px; margin-top: 60px;"></div>
+            <div id="id_final" style="display: none; height: 200px;">
+                <button onclick="fim()">Fechar compra</button>
+
+            </div>
+        </div>
+    </center>
+
+</body>
+
+</html>
+<script>
+
+
+    var digito = 0;
+    var contador = 0;
+
+
+
+    function calcular() {
+
+
+        var loja = Number(id_loja.value);
+        var conta = Number(id_conta.value);
+        div_senha.innerHTML = ''
+
+        if (conta % loja < 3) {
+            digito = 1;
+        } else if (conta % loja <= 6) {
+            digito = 2;
+        } else {
+            digito = 3;
+        }
+        if (loja < 1 || loja > 10) {
+            alert('Loja inválida!');
+        } else if (conta <= 0) {
+            alert('Conta inválida!');
+        } else if (digito != iddigito.value) {
+            alert('Dígito inválido');
+        } else {
+            div_inicio.style.display = 'none';
+            msg_muda.innerHTML = `Olá cliente ${nome.value} entre com a sua senha
+             para a Conta ${conta}-${digito} da Loja ${loja}`;
+            id_entrar.style.display = 'block';
+        }
+
+    }
+
+
+    function limpar() {
+        id_senha.value = '';
+
+    }
+
+
+
+    function entrar() {
+        if ((digito == 1 && id_senha.value == "recife") || (digito == 2 && id_senha.value == "manaus")
+            || (digito == 3 && id_senha.value == "fortaleza")) {
+
+            id_produtos.style.display = 'block';
+            id_entrar.style.display = 'none';
+
+        } else {
+
+            div_senha.innerHTML += '<br><br> senha inválida';
+            contador++;
+            nome.value = '';
+            iddigito.value = '';
+            id_senha.value = '';
+            id_loja.value = '';
+            id_conta.value = '';
+
+            while (contador == 4) {
+                alert(`Você excedeu o número de tentativas, sua conta está bloqueada!!!!! procure suporte`);
+                id_entrar.style.display = 'none';
+                div_inicio.style.display = 'block';
+                contador = 0;
+            }
+
+        }
+
+    }
+
+
+
+    function produto() {
+
+
+        id_material.style.display = 'none';
+        id_qtdee.style.display = 'none';
+        id_orca.innerHTML = '';
+        id_produtos.style.display = 'block'
+
+
+        if (id_produto.value == 'cadeira de praia') {
+            cadeiraPraia_img.innerHTML = ` <br>
+          <img src= "http://f.i.uol.com.br/fotografia/2015/01/27/477143-600x600-1.jpeg">`
+            cadeiraJardim_img.innerHTML = ''
+            id_material.style.display = 'block';
+        }
+        if (id_produto.value == 'cadeira de jardim') {
+            cadeiraJardim_img.innerHTML = `<img src= "https://4.bp.blogspot.com/-0G-EdUMfHXY/U81WTpdLp1I/AAAAAAAAaU0/vhB8TUiRius/s1600/balan%C3%A7o-de-jardim-quintal+4.jpg">`;
+            id_material.style.display = 'block';
+            cadeiraPraia_img.innerHTML = ''
+        }
+    }
+
+
+
+    function select_qtde() {
+        if (select_mat.value == '') {
+            id_qtdee.style.display = 'none';
+        } else {
+            id_qtdee.style.display = 'block';
+        }
+        id_orca.innerHTML = '';
+    }
+
+
+
+    function calcular_orca() {
+        var preco = 0;
+        var qtd_cadeiras = Number(ipt_qtd.value);
+        var orcamento = 0;
+
+        if (id_produto.value == 'cadeira de praia') {
+            if (select_mat.value == 'alumínio') {
+                preco = 75;
+            }
+            if (select_mat.value == 'plástico') {
+                preco = 50;
+            }
+            if (select_mat.value == 'ferro') {
+                preco = 80;
+            }
+
+        }
+
+        if (id_produto.value == 'cadeira de jardim') {
+            if (select_mat.value == 'alumínio') {
+                preco = 70;
+            }
+            if (select_mat.value == 'plástico') {
+                preco = 35;
+            }
+            if (select_mat.value == 'ferro') {
+                preco = 55;
+            }
+
+        }
+        if (qtd_cadeiras > 50) {
+            orcamento = preco * qtd_cadeiras * 0.97;
+        } else {
+            orcamento = preco * qtd_cadeiras;
+        }
+
+
+        id_orca.innerHTML = `O orçamento para a compra de 
+        <b>${qtd_cadeiras}</b> ${id_produto.value} de ${select_mat.value} é R$${orcamento.toFixed(2)}</b><br>`;
+
+
+        if (select_mat.value == 'alumínio') {
+            id_orca.innerHTML += `Para pagamentos à vista, o desconto
+            é de <i> 3,5 </i>% e seu pedido ficará por R$${(orcamento * 0.965).toFixed(2)}</b>`;
+            id_final.style.display = 'block';
+        }
+
+        if (select_mat.value == 'plástico' || select_mat.value == 'ferro') {
+            id_orca.innerHTML += `Para pagamentos à vista, o desconto
+            é de <i>5</i>% e seu pedido ficará por R$${(orcamento * 0.95).toFixed(2)}</b>`;
+            id_final.style.display = 'block';
+        }
+
+
+
+    }
+
+    function fim() {
+        id_final.innerHTML = `Ficamos felizes em atende-lo!! volte sempre.`;
+    }
+
+
+
+
+</script>

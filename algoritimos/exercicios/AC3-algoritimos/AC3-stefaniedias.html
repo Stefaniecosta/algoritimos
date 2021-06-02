@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0121121 prova</title>
+</head>
+<body>
+
+
+
+  <h2>Pedra - Papel - Tesoura</h2>
+  <br><br>
+  <button onclick="sortear()">Joken Po</button>
+  <br><br>
+
+  <div id="div_img"></div>
+  <div id="div_img2"></div>
+  <br><br>
+  <div id="div_msg" style="display: inline;"></div> 
+  <div id="div_msg2" style="display: inline;"></div>
+  
+  <br><br>
+  <div id="resul"></div>
+
+  <div id="intervalos" style="width: 100%; margin-top: 10px; height: 300px; display:none;">
+    De:<input type="text" id="inp_de"> até:<input type="text" id="inp_ate"> <button
+      onclick="intervalo()">Intervalo</button></div>
+
+</body>
+</html>
+<script>
+
+  var jogada = [];
+
+
+  var contador = 0;
+  var rodada = 0;
+  var resultado_partida =  0;
+
+  function sortear() {
+
+    rodada++
+
+    intervalos.style.display = "block"
+
+    div_img.innerHTML = '';
+    div_msg.innerHTML = '';
+
+
+    for (var contador = 0; contador < 1; contador++) {
+      var sorteio1 = parseInt(Math.random() * 3 + 1);
+
+      if (sorteio1 == 1) {
+        div_img.innerHTML += '<img width="100px" src="img/jkp_papel.png" alt="">';
+        segundo()
+        jogodor1 = papel;
+      } else if (sorteio1 == 2) {
+        segundo()
+        jogodor1 = pedra;
+        div_img.innerHTML += '<img width="100px" src="img/jkp_pedra.jpg" alt="">';
+      } else {
+        segundo()
+        jogodor1 = tesoura;
+        div_img.innerHTML += '<img width="100px" src="img/jkp_tesoura.png" alt="">';
+       
+      }
+
+    }
+
+    function segundo() {
+
+
+      for (var index = 0; index < 1; index++) {
+
+        var sorteio2 = parseInt(Math.random() * 3 + 1);
+
+        jogo1 = 0;
+        jogo2 = 0;
+        jogo3 = 0;
+
+        if (sorteio2 == 1) {
+          div_img2.innerHTML = '<img width="100px" src="img/jkp_papel.png" alt="">';
+          jogador2 = papel;
+        } else if (sorteio2 == 2) {
+          div_img2.innerHTML = '<img width="100px" src="img/jkp_pedra.jpg" alt="">';
+          jogador2 = pedra;
+        } else {
+          div_img2.innerHTML = '<img width="100px" src="img/jkp_tesoura.png" alt="">';
+          jogador2 = tesoura;
+        }
+
+      }
+
+        if (jogodor1 == pedra && jogador2 == papel) {
+          div_msg.innerHTML = "papel venceu pedra"
+          resultado_partida += jogador1;
+        } else if (jogador1 == pedra && jogador2 == tesoura) {
+          div_msg.innerHTML = "Pedra venceu tesoura"
+          resultado_partida += jogador1;
+        } else if (jogador1 == papel && jogador2 == tesoura) {
+          div_msg.innerHTML = "Tesoura venceu papel"
+          resultado_partida += jogador2;
+        } else {
+          div_msg.innerHTML = "empate"
+          resultado_partida += 0;
+
+
+        }
+    }
+
+  }
+
+
+  function intervalo() {
+
+    jogada.push(resultado_partida);
+
+    div_img.innerHTML = '';
+    if (inp_de.value > 0 && inp_ate.value <= rodadas && inp_de.value == inp_ate.value) {
+      resul.innerHTML = `Quantidade de rodadas: ${rodada}`;
+    } else {
+      alert("intervalo invalido");
+    }
+
+  }
+
+
+</script>

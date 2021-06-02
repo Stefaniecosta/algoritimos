@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 7. Crie um programa em HTML/JS o qual:
+
+a) Solicita a temperatura do ambiente
+
+b) Ao clicar em "Verificar clima", determine se a temperatura está:
+
+    Apropriada p/ conservar alimento - Caso a temperatura for menor que 10
+    Inapropriada p/ conservar alimento - Caso a temperatura for a partir de 10
+
+c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado.
+ Caso contrário, exiba a imagem de um alimento estragado.
+
+OBS. Faça usando somente um Operador Ternário. -->
+
+  <h2>O ambiente esta adequado para a comida?</h2>
+  <input type="text" id="inp_temp" placeholder="Digite a temperatura">
+  <br>
+  <br>
+  <button onclick="calcular()">Verificar clima</button>
+  <br>
+  <br>
+  <div id="msg_muda"></div>
+    
+</body>
+</html>
+
+<script>
+
+function calcular() {
+
+    var temp = Number(inp_temp.value);
+
+    temp < 10 ? msg_muda.innerHTML = `Adequado para conservar alimentos <br> <br>
+     <img src= "https://i.pinimg.com/originals/50/b3/09/50b3092eb235d7e9ff2d48bf7a1f819d.gif">`:
+     msg_muda.innerHTML = `Inadequado para conservar alimentos <br> <br>
+     <img src= "https://assets.almanaquesos.com/wp-content/uploads/2014/05/tumblr_m7ukafIoTr1r06mxro1_500.gif">`
+    
+}
+
+
+
+</script>

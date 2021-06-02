@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--6 (clássico). Crie um programa o qual:
+
+a) Tenha um campo "Digite um número qualquer" e um botão "Cadastrar". 
+Ao clicar nele o número é cadastrado em algum lugar.
+
+b) Tenha, um botão “Ver Histórico”. Ao clicar nele deve aparecer um histórico 
+dos números cadastrados, bem como o maior e o menor, como no exemplo a seguir:
+
+   1º Número: 15
+
+   2º Número: 22
+
+   3º Número: 19
+
+   4º Número: 5
+
+ 
+
+   Maior: 22
+
+   Menor: 5
+
+   Média: 15.25
+
+   Total: 61-->
+
+
+   <input type="text" id="inp_cadastro" placeholder="cadastre aqui">
+   <button onclick="cadastrar()">Cadastrar</button>
+  
+   <input type="text" id="inp_pesquisa" placeholder="pesquise um aluno">
+   <button onclick="historico()">Ver historico</button>
+  
+  
+   <div id="msg_muda"></div>
+      
+
+    
+</body>
+</html>
+
+<script>
+
+var vt_num = [];
+
+function cadastrar() {
+
+    var numero = Number(inp_cadastro.value)
+
+    vt_num.push(numero);
+
+    msg_muda.innerHTML += `${numero}`
+    inp_cadastro.value = ''
+}
+
+function historico() {
+
+    msg_muda.innerHTML += ''
+
+var num_maior = vt_num[0];
+var num_menor = vt_num[0];
+var total= 0;
+
+    for (var index = 0; index < vt_num.length; index++) {
+       if (vt_num[index] > num_maior) {
+           num_maior = vt_num[index];
+       }
+
+       if (vt_num[index] < num_menor) {
+           num_menor = vt_num[index];
+       }
+
+       total += vt_num[index];
+    }
+    
+}
+
+</script>

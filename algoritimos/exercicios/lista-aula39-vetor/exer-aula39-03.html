@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--
+3. Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar".
+Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão. SÓ QUE, aparecem na cor azul, depois vermelho, depois azul, depois vermelho, e assim por diante.
+
+-->
+
+
+    <input type="text" placeholder="digite um filme" id="inp_filme">
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div id="msg_muda"></div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    filmes = [];
+
+    function cadastrar() {
+
+        var filme = inp_filme.value
+
+        filmes.push(filme);
+
+        var tamanho = filmes.length;
+
+        resto = tamanho % 2;
+
+
+        for (var cont = 0; cont < filmes.length; cont) {
+            if (cont == 0) {
+                msg_muda.innerHTML += `<b style="color: red;"> ${filmes}</b>`
+
+            } else {
+                msg_muda.innerHTML += `<b style="color: blue;">${filmes}</b> <br>`
+            }
+
+        }
+
+
+    }
+
+</script>

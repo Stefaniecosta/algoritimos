@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetição</title>
+</head>
+<body>
+
+
+    <!--
+16). Crie um programa em HTML/JS o qual:
+a) Pergunte, numa combo, qual a tabuada que o usuário quer ver na tela (1 a 9)
+b) Ao mudar o valor na combo, exiba abaixo a tabuada como neste exemplo (considerando que o usuário escolheu 3)
+    3 x 1 = 3
+    3 x 2 = 6
+    3 x 3 = 9
+    3 x 4 = 12
+    3 x 5 = 15
+    3 x 6 = 18
+    3 x 7 = 21
+    3 x 8 = 24
+    3 x 9 = 27
+c). Formate a linha de tal forma que quando o multiplicador for ímpar, a linha apareça na cor vermelha e quando for par, na cor azul. ex: "3 x 1 = 3" aparace tudo em vermelho, mas "3 x 4 = 12" aparece tudo em azul.
+
+-->
+<!--Opção para escolher a tabuada-->
+<center>
+    <select name="tabuada" id="tabuada_valor" onchange="mostrar()">
+        <option value="1">Tabuada do 1</option>
+        <option value="2">Tabuada do 2</option>
+        <option value="3">Tabuada do 3</option>
+        <option value="4">Tabuada do 4</option>
+        <option value="5">Tabuada do 5</option>
+        <option value="6">Tabuada do 6</option>
+        <option value="7">Tabuada do 7</option>
+        <option value="8">Tabuada do 8</option>
+        <option value="9">Tabuada do 9</option>
+    </select>
+
+    <div id="msg_muda"></div>
+
+</center>
+
+</body>
+
+</html>
+
+<script>
+
+
+function mostrar() {
+    
+
+    msg_muda.innerHTML = '' // toda vez que a função é ativada (para mudar) aqui é limpo
+
+    var tabuada = tabuada_valor.value; // o valor da combo é o numero da tabuada
+
+    var vezes = 0; // se inicia com 0
+
+    while (vezes <= 9) { // repetir ate chegar a 9
+        var resul = tabuada * vezes; // resul da multi
+         var resto = vezes%2
+        if (resto == 0) {
+        msg_muda.innerHTML += `<br> <span style="color: blue;"> ${tabuada} x ${vezes} = ${resul} <span>` // concatenar para exibit
+       // somando para que chegue a 9, e parar de repetir
+    } else {
+        msg_muda.innerHTML += `<br> <span style="color: red;"> ${tabuada} x ${vezes} = ${resul} <span>` // concatenar para exibit
+    }
+    vezes++ 
+}
+
+}
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="Sorteio()">Ver sorte</button>
+    <div id="saida"></div>
+    
+</body>
+</html>
+
+<script>
+    function Sorteio(){
+        var core =0;
+        var bara =0;
+        saida.innerHTML="";
+        for(var cont =0;cont<21;cont++){
+            var imagem = parseInt(Math.random()*2+1);
+            if(imagem==1){
+                core++;
+            } else{
+                bara++;
+            }
+            saida.innerHTML += `<img src="imagens/${imagem}.jpg" alt="">`;
+           
+           if(core>10||bara>10){
+               break;
+           }
+        }
+        if(core>bara){
+            saida.innerHTML+= `</br> Você tem mais sorte no amor`;
+            } else{
+                saida.innerHTML+=`</br> Você tem mais sorte no jogo`;
+            }
+    }
+</script>

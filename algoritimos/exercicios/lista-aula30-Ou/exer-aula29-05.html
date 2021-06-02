@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--5. Augusto Bivio é aluno Bandtec e bolou um critério para indicar 
+em  quais empresa teria preferência em ir trabalhar. Seus critérios são: 
+A bolsa deve ser pelo menos 1800 ou o VR pelo menos 20 ou deve ficar a no 
+máximo 30 minutos de tempo de deslocamento da faculdade. Se um desses 3 critérios
+ for ok, a empresa está entre suas preferências. Assim, crie um programa em HTML/JS o qual:
+
+a) Solicite o nome da empresa
+b) Solicite o valor da bolsa da empresa
+c) Solicite o valor do VR da empresa
+d) Solicite o tempo de descolamento da empresa para a Bandtec
+e) Ao clicar em "É preferida?", mostre uma dessas mensagens na própria página,
+ abaixo do botão:
+   "A empresa X é uma de suas preferências", caso a empresa atenda aos critérios 
+   aqui explicados
+   "A empresa X está fora da sua lista", caso contrário-->
+
+
+    <center>
+
+
+        <input type="text" placeholder="escreva o nome da sua empresa" id="inp_empresa">
+        <br>
+        <br>
+        <input type="text" placeholder="Solicite o valor da bolsa empresa" id="inp_bolsa">
+        <br>
+        <br>
+        <input type="text" placeholder="Solicite o valor do VR da empresa" id="inp_vr">
+        <br>
+        <br>
+        <input type="text" placeholder="Tempo ate a faculdade" id="inp_tempo">
+
+        <br>
+        <br>
+
+        <button onclick="calcular()">É preferida?</button>
+
+        <div id="msg_muda"></div>
+
+    </center>
+
+</body>
+
+</html>
+
+<script>
+
+function  calcular() {
+
+
+    var empresa = String(inp_empresa.value);
+    var bolsa = Number(inp_bolsa.value)
+    var vr = Number(inp_vr.value);
+    var tempo = Number(inp_tempo.value);
+
+
+    if ( bolsa >= 1800 || vr >= 20 || empresa <= 30 ) {
+        msg_muda.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+    } else {
+
+        msg_muda.innerHTML = `A empresa ${empresa} está fora da sua lista`
+    }
+    
+}
+
+
+</script>

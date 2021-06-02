@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 07</title>
+</head>
+
+<body>
+
+    <center>
+
+        <!-- 7. Crie um programa em HTML/JS o qual:
+
+a) Solicita a frequência do aluno
+
+b) Ao clicar em "Analisar frequência", deve aparecer, abaixo dele:
+
+A imagem de um turista, caso a frequência for menor que 50 OU A imagem de um
+ aluno estudioso, caso a frequência for a partir de 50
+
+ -->
+
+
+
+        <div> <h2> Vamos analisar os alunos!</h2>
+
+            <br> <br>
+
+            <label>Informe a frequencia do aluno</label>
+            <input type="number" id="ipt_freq">
+
+            <br> <br>
+
+            <button onclick="analisar()">Analisar frequencia</button>
+
+        </div>
+
+        <br> <br>
+
+        <div id="div_msg"></div>
+
+
+
+    </center>
+</body>
+</html>
+
+<script>
+        
+        function analisar() {
+
+            var frequencia = Number(ipt_freq.value);
+
+            if (frequencia < 50) {
+                  
+            div_msg.innerHTML = `<span> <h1> Aluno turista! vixi </h1><br> <img src=" https://i.makeagif.com/media/9-01-2017/s38ngw.gif"> </span>`
+
+            } else {
+                div_msg.innerHTML = `<span> <h1> Uau! aluno estudioso! </h1><br> <img src="https://i.makeagif.com/media/1-22-2018/SqdHEe.gif"> </span>`
+            }
+            
+        }
+
+</script>

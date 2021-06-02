@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+         <!-- 5. (desafio) Crie um programa em HTML/JS o qual:
+a) Solicite a renda familiar do usuário
+b) Solicite a quantidade de adultos numa "combo" a qual possui somente as opções
+ 1, 2, 3, 4 e 5
+c) Ao clicar no botão "Verificar classe social", você deve usar a pirâmide abaixo
+ para exibir qual a
+ classe social da familia do usuário -->
+
+    <label>Solicite sua renda familiar</label>
+    <input type="number" id="ipt_renda">
+ 
+    <br> <br>
+
+    <label>Escolha quantos adultos tem e sua casa</label>
+    <select name="" id="adultos">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+     <br> <br>
+    <button onclick="analisar()">Analisar clima</button>
+
+    <div id="div_muda"></div>
+
+    <div id="div_msg"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    
+           function analisar() {
+
+            var classe = Number(ipt_renda.value);
+            var adultos = Number(adultos);
+
+            var renda = classe / adultos;
+
+            if (classe > 16263) {
+
+                div_muda.innerHTML = `<h2> Sua classe é A! <br>
+                 <img src= "https://media0.giphy.com/media/bwLI2JHYHpD4c3UosX/giphy.gif"> </h2>`
+            } else {
+                if (classe > 5000) {
+                    div_muda.innerHTML = `<h2> Sua classe é B! <br>
+                 <img src= "https://media0.giphy.com/media/bwLI2JHYHpD4c3UosX/giphy.gif"> </h2>`
+                }  else {
+
+                if (classe >= 2000) {
+                    div_muda.innerHTML = `<h2> Sua classe é C! <br>
+                 <img src= ""> </h2>`
+
+                }
+              else {
+                    div_muda.innerHTML = `<h2> Sua classe é D e E! <br>
+                 <img src= ""> </h2>`
+                }
+            }
+
+            }
+           
+           }
+
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--7. Crie um programa em HTML/JS o qual:
+
+a) Solicite uma frase ao usuário:
+
+b) Enquanto ele digita, exiba abaixo da frase letra por letra que a frase contém, uma abaixo da outra.
+
+Ex: Ele digitou 'Boa tarde'. Abaixo,deve aparecer:
+
+B
+o
+a
+
+t
+a
+r
+d
+e  -->
+
+ <h2>Escreva um frase</h2>
+ digite aqui <input id="inp_frase" onkeyup="analisar()">
+
+
+ <div id="div_msg"></div>
+    
+</body>
+</html>
+
+ <script>
+         
+         function analisar() {
+
+            var texto = inp_frase.value;
+            var letra = texto[texto.length -1]
+
+            div_msg.innerHTML += `${letra} <br>`
+             
+         }
+
+
+ </script>
+

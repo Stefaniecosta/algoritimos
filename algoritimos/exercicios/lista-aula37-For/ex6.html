@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Dizer()">Diga algo sobre a quarentena</button>
+    <div id="saida"></div>
+</body>
+</html>
+<script>
+    function Dizer(){
+        saida.innerHTML = '';
+        for(var cont =0; cont<7; cont++){
+            saida.innerHTML += cont+1 + '. Sempre tem o que aprender na quarentena </br>';
+        }
+    }
+</script>

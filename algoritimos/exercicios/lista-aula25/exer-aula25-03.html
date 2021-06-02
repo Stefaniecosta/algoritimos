@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+
+    <!-- 3. Um grupo de amigos costuma (ou costumava, antes do Covid19) a se reunir a
+ casa de um deles para pedir e comer pizza. Só que eles tinham um trato de que o valor da pizza, 
+ quando dividido entre os amigos, não passe de 20,00 por amigo. Ajude eles criando um programa em HTML/JS o qual:
+
+a) Pergunte o valor da pizza
+
+b) Pergunte a quantidade de amigos reunidos
+
+c) Ao clicar em "Rola a pizza?", calcule e exiba o valor que cada amigo vai pagar na pizza com uma frase na
+ página como esta "Cada amigo vai pagar R$X pela pizza"
+
+d) Somente caso o valor por amigo passe de R$20,00, exiba também a frase "Deu ruim! Pizza muito cara!" -->
+
+
+
+        <div> 
+          <h2>Noite com os amigos!</h2>
+        </div>
+
+        <label for="valor">Qual é o valor da pizza?</label>
+        <input type="number" id="valor">
+
+        <br> <br>
+
+        <label for="amigos">Quantos amigos irão comer?</label>
+        <input type="number" id="amigos">
+
+        <button onclick="calcular()">Rola pizza?</button>
+           
+        <br> <br> <br>
+
+        <div> Cada amigo vai pagar pela pizza <b id="muda"></b></div>
+        <br>
+        <div id="muda2"></div>
+    
+</body>
+</html>
+
+<script>
+
+function calcular() {
+
+    var preco = Number(valor.value);
+    var qtde = Number(amigos.value);
+
+    var resultado = preco / qtde;
+
+      muda.innerHTML = resultado.toFixed(2);
+
+    if (resultado > 20) {
+
+            muda2.innerHTML = `<h2>Deu ruim pizza muito cara!<h2>`
+
+    }
+
+
+    
+}
+    
+
+
+
+</script>

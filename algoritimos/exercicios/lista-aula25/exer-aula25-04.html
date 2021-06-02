@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+
+    <!--4. Refaça a questão 2 de tal forma que a frase do item d)
+         apareça na cor de letra branca com fundo vermelho.  -->
+
+         <div>Vamos mudar a cor da mensagem! e cuidar da sua diabetes</div>
+
+         <h2>Vamos controlar sua diabete !</h2>
+         <h2>e descobrir o quanto consome em 1 ano.</h2>
+
+         <label for="valor">Quantas latinhas voce toma por dia?</label>
+         <input type="number" id="valor">
+
+         <br> <br> <br>
+
+         <button onclick="calcular()">Quantos refris?</button>
+
+         <br> <br> <br>
+
+         <div>A quantidade que voce toma em 1 ano é: <b id="muda"></b></div>
+    
+</body>
+</html>
+
+<script>
+
+         function calcular() {
+
+          var refris = Number(valor.value);
+               
+            var resultado = refris * 365;
+            muda.innerHTML = resultado.toFixed(2);
+
+            if (resultado > 500) {
+                muda.innerHTML += `<br> <span style="color: white; background-color: red;" >Ei, tome cuidado com a diabetes!<span>`
+            }
+
+             
+         }
+
+         
+
+</script>

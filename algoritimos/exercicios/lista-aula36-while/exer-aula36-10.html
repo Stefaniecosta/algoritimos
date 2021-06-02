@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!--
+10. Crie um programa em HTML/JS o qual:
+a) Pergunte de quantos em quantos dias o usuário faz musculação 
+(é só uma informação, só 1 número, ok?)
+b) Ao clicar em "Exibir rotina mensal", mostre uma sequência de 
+30 frases, como neste exemplo:
+
+    Dia 1 - Musculação
+
+    Dia 2 - Comer, dormir etc
+
+    Dia 3 - Comer, dormir etc
+
+    Dia 4 - Musculação
+
+    Dia 5 - Comer, dormir etc
+
+    Dia 6 - Comer, dormir etc
+
+    Dia 7 - Musculação
+
+    ...
+
+    Dia 30 - Comer, dormir etc
+
+O Dia 1 sempre é de "Musculação"
+
+Considere que, nesse exemplo, o usuário informou 3 no item a)
+
+ -->
+
+
+
+    <h2> Quantos em quantos dia faz musculação</h2>
+    <input type="text" placeholder="Digite aqui o numero" id="id_num">
+
+    <br>
+    <br>
+    <button onclick="calcular()">Exibir rotina mensal</button>
+
+
+    <div id="msg_muda"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var dias = Number(id_num.value)
+
+
+        contador = 1;  // contador começa do 1
+
+
+        while (contador <= 30) { // laço de repetiçao ate dia 30
+
+            if (contador == 1 || (contador % dias) == 0) { 
+                msg_muda.innerHTML += `<br> Dia ${contador}: musculação `  
+            }
+            else {
+                msg_muda.innerHTML += `<br> Dia ${contador}: comer, dormir, etc `
+            }
+
+            contador++;
+        }
+
+    }
+
+
+    //// quando o contador for igual a 1 acrescenta a frase OU 
+    // matematica: inteiro/escolhido = resto. Se resto for igual a 0, obdece e acrescenta a frase.  (se o resto de um numero
+    // se nao, acrescenta a frase normal.
+    // Assim se acha o intervalo.
+
+
+</script>

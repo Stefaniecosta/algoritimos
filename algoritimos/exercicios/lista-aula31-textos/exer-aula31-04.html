@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--  Melhore a questão 1 considerando que um email válido deve conter '@' e '.'
+         (ponto) além de ter pelo menos 7 caracteres -->
+    
+        
+         <div class="">
+                 
+            <h2>Queremos seu email</h2>
+            digite teu email <input id="ipt_email" onkeyup="analisar()">
+       <!-- onkeyup indica o que vai acontecer logo após usar uma tecla qualquer -->
+          </div>
+          <div id="div_muda"></div>
+       
+   </body>
+   </html>
+   
+   <script>
+   
+           function analisar() {
+   
+               var email = ipt_email.value;
+   
+               if (email.indexOf('@') >= "0" && email.indexOf('.') >= "0" ) {
+   
+                 div_muda.innerHTML = `email valido`;
+   
+               } else {
+                   div_muda.innerHTML = `email invalido`;
+               
+               }
+              
+               
+           }
+
+           </script>
+
+

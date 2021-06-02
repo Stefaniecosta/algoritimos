@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--8. Crie um programa em HTML/JS o qual:
+a) Pergunta o tempo que deixou o arroz cozinhando
+
+b) Ao clicar em "Provar arroz", verifica se o cozimento foi perfeito. Um cozimento perfeito 
+é de 5 minutos, exatamente
+
+c) Caso o cozimento tenha sido perfeito, exiba a frase "Parabéns! Arroz perfeito!" e, abaixo 
+dela, a imagem de um bonito arroz. Caso contrário, exiba a frase "Arroz cru ou cozido demais!"
+ e, abaixo dela, a imagem de um arroz "empapado" ou queimado
+
+ -->
+    
+ <h2>Qual o tempo do teu arroz</h2>
+ <input type="text" id="inp_temp" placeholder="Digite a tempo">
+ <br>
+ <br>
+ <button onclick="calcular()">Provar arroz</button>
+ <br>
+ <br>
+ <div id="msg_muda"></div>
+   
+
+</body>
+</html>
+
+<script>
+    
+    function calcular() {
+
+        var tempo = Number(inp_temp.value);
+
+        tempo == 5 ? msg_muda.innerHTML = `Parabens! arroz perfeito <br> <br>
+     <img src= "https://image.myanimelist.net/ui/5pjpFizOF0WqHWXSGonzMV5JrVKJNTwzVV96P64j8qsO1X8psY2_YOZa3mKypV5TQ25-aJwOe33fXIEIlhAZy4gD-OE2BXFy4k0HU0ib5vc">` 
+     : msg_muda.innerHTML = `urg, arroz empapado <br> <br>
+     <img src= "https://claudia.abril.com.br/wp-content/uploads/2020/01/r7kshj5.gif">`
+        
+    }
+
+
+
+
+</script>

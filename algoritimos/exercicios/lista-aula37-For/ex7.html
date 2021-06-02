@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a mensagem <input type="text" id="input_mens"> <br>
+    Quantas vezes quer repetir?
+    <input type="text" id="input_vezes"> <br>
+    <button onclick="Dizer()">Diga algo sobre a quarentena</button>
+    <div id="saida"></div>
+</body>
+</html>
+<script>
+    function Dizer(){
+        var mensagem = input_mens.value;
+        var vezes = input_vezes.value;
+        saida.innerHTML = '';
+        for(var cont =0; cont<vezes; cont++){
+            saida.innerHTML += cont+1 + `. ${mensagem} </br>`;
+        }
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else</title>
+</head>
+<body>
+
+      <!--
+a) Peça ao usuário para informar um valor de ano.
+b) Tenha um botão "Ver fato" que exiba a seguinte frase abaixo:
+
+Se o ano informado for anterior a 1965: "No ano X o email nem havia sido criado ainda ... ", em negrito e na cor vermelha.
+Se o ano informado for 1965: "No ano X o email estava sendo criado ... ", na cor azul.
+Se o ano informado for posterior a 1965: "No ano X o email já havia sido criado ... ", com fundo amarelo.
+Se o ano informado for posterior a 1969: "No ano X o email já havia sido aprimorado - Poderia ser enviado para outro computador ... ", em negrito, com fundo amarelo e cor vermelha.
+
+-->
+
+<input type="text" placeholder="Insira um ano" id="inp_ano">
+<button onclick="calcular()">Ver fato</button>
+
+<div id="msg_muda"></div>
+ 
+</body>
+</html>
+<script>
+
+function calcular() {
+
+    var ano = Number(inp_ano.value);
+
+    if (ano < 1965) {
+     msg_muda.innerHTML = `<B style="color: red;"> No ano ${inp_ano.value} o email nem havia sido criado ainda... </B>`      
+    } else if( ano >= 1969) {
+        msg_muda.innerHTML = `<b style="color: red; background-color: rgb(243, 219, 8);"> No ano ${inp_ano.value} o email já havia sido aprimorado - Poderia ser enviado para outro computador...</b>`      
+    } else if (ano == 1965) {
+        msg_muda.innerHTML = `<p style="color: rgb(0, 132, 255);"> No ano ${inp_ano.value} o email  estava sendo criado...</p>`
+    } else {
+        msg_muda.innerHTML = `<P style="background-color: rgb(243, 219, 8);">No ano ${inp_ano.value} o email já havia sido criado ...<p>`
+    }
+    
+}
+
+</script>

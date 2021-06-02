@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <!-- 8. Crie um programa em HTML/JS o qual:
+
+a) Solicita a temperatura do ambiente
+
+b) Ao clicar em "Verificar clima", determine se o clima está:
+
+Apropriada p/ conservar alimento - Caso a temperatura for menor que 10 Inapropriada 
+p/ conservar alimento - Caso a temperatura for a partir de 10
+
+c) Em caso de temperatura apropriada, exiba a figura de um alimento em bom estado. 
+Caso contrário, exiba a imagem de um alimento estragado -->
+
+        <div>
+            <h1>Vamos analisar se o ambiente esta apropriado!</h1>
+            <br> <br>
+            <label>Qual a temperatura do ambiente?</label>
+            <input typo="number" id="ipt_temp">
+            <br> <br> <br>
+
+            <button onclick="analisar()">Analisar temperatura</button>
+
+        </div>
+  
+
+        <div id="div_muda"></div>
+
+
+
+
+    </center>
+</body>
+</html>
+
+      <script>
+
+          function analisar() {
+
+            var temperatura = Number(ipt_temp.value);
+
+            if (temperatura < 10) {
+
+                div_muda.innerHTML =  `<span> <h1> Temperatura inadequada! </h1><br>
+                 <img src="https://assets.almanaquesos.com/wp-content/uploads/2014/05/tumblr_m7ukafIoTr1r06mxro1_500.gif"> </span>`
+
+
+            } else {
+
+                div_muda.innerHTML =  `<span> <h1> Temperatura adequada! </h1><br>
+                 <img src="https://i.pinimg.com/originals/74/1f/ec/741fecf53d0306abc5debd9b48663be7.gif"> </span>`
+
+                   
+            }
+              
+          }
+
+
+
+
+      </script>

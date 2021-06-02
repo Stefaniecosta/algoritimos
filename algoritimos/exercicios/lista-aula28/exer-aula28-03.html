@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--3. Crie um programa em HTML/JS que:
+a) Solicite a temperatura do ambiente
+b) Ao clicar em "Analisar clima", exiba na página:
+   "Frio!" (na cor azul e somente caso a temperatura for menos que 21,5)
+   OU
+   "Quente!" (na cor vermelha e somente caso a temperatura for a partir de 21,5)
+     -->
+
+     <div>
+                  <h1>Vamos checar a temperatura do ambiente</h1>
+
+                  <br><br>
+
+                  <label>Digite a temperatura doo ambiente!</label>
+                  <input type="number" id="ipt_temp">
+                  <br> <br> <br> <br> 
+
+                  <button onclick="analisar()">Analisar clima</button>
+
+                  <div id="div_muda"></div>
+
+     </div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+
+        var temperatura = Number(ipt_temp.value);
+
+        if ( temperatura < 21.5)
+         {
+               div_muda.innerHTML = '<h1 style="color: cyan;" > frio <h1>';
+         } else {
+            div_muda.innerHTML = '<h1 style="color: red;" > Quente <h1>';
+         }
+        
+    }
+
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--6. O aplicativo Tinder é muito popular entre os jovens no Brasil. 
+    Menos entre os alunos Bandtec,que são focados no estudos e não na pegação ou
+ relacionamentos. Zé Buduia, no entanto, não sai do Tinder e tem preferência 
+ por mulheres altas (a partir de 1,7m) e de cabelo pretos ou vermelhos.
+  Crie um simulador de Tinder para ele no qual:
+a) Numa combo, pergunte a cor de cabelo da moça, tendo disponíveis as opções
+   Preto
+   Vermelho
+   Amarelo
+   Castanho
+b) Pergunte a altura da moça
+c) Ao clicar em "Deu match?", mostre, abaixo:
+    A imagem de um cara feliz/empolgado, caso as características
+     sejam conforme as explicadas aqui que o Zé gosta
+   Ou a imagem de um cara decepcionado em caso contrário-->
+
+
+   <select name="" id="id_cabelo">
+
+    <option>Selecione sua cor de cabelo</option>
+    <option value="1">Preto</option>
+    <option value="2">Vermelho</option>
+    <option value="3">Amarelo</option>
+    <option value="4">Castanho</option>
+</select>
+
+
+<br>
+<input type="text" placeholder="digite sua altura" id="id_altura">
+
+
+<button onclick="calcular()">Deu match?</button>
+
+<div id="msg_muda"></div>
+
+</body>
+</html>
+
+<script>
+
+function calcular() {
+
+    var altura = Number(id_altura.value);
+
+    if ( (altura >= 1.70) && id_cabelo.value == 1 || id_cabelo.value == 2  ) {
+        msg_muda.innerHTML = '<img src= "https://shiritorii.files.wordpress.com/2019/09/corac3a7c3b5es.gif?w=584">'
+
+    } else {
+        msg_muda.innerHTML = '<img src= "http://hampines.blogs.sapo.pt/arquivo/lindinha_chorando.gif">'
+    }
+    
+}
+
+
+</script>

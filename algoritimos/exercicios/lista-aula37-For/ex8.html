@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas "Coca-Cola" ele acha que já bebeu na vida? <input type="text" id="input_latinhas">
+    <button onclick="Latinhas()">Ver a quantidade</button>
+    <div id="saida"></div>
+</body>
+</html>
+<script>
+    function Latinhas(){
+        saida.innerHTML = '';
+        var latas = Number(input_latinhas.value);
+
+        for(var cont = 0;cont<latas;cont++){
+            saida.innerHTML += '<img src="imagens/coquinha.jpg" alt="">';
+        }
+    }
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--. Crie um programa em HTML/JS o qual
+
+a) Solicite a temperatura
+
+b) Ao clicar em "Analisar", exiba na própria página uma dessas frases:
+
+"Temperatura desconfortável", caso ela for menor que 22 ou maior que 25
+
+"Temperatura confortável", caso contrário-->
+
+
+
+      <input type="text" placeholder="digite a temperatura" id="inp_temp">
+
+      <br>
+      <br>
+
+      <button onclick="calcular()">Analisar</button>
+    
+</body>
+</html>
+
+
+<script>
+
+function calcular() {
+    
+var temp = Number(inp_temp.value);
+
+        if (temp < 22 || temp > 25 ) {
+            alert("temperatura desconfortavel")
+        } else {
+          alert("Temperatura confortável") 
+        }
+
+}
+
+
+
+
+</script>
